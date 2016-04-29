@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML lang=en><HEAD>
+<!--Revised: 16 Dec, 1999 By: Enrique Bengoechea-->
+<META http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<META name=author content="Enrique Bengoechea">
+<TITLE>htmlpp: Making a Calendar</TITLE>
+<STYLE type="text/css">
+<!--
+BODY {margin: 0em}
+A.footer {color: #CCFFFF}
+A.index {text-decoration: none}
+-->
+</STYLE>
+</HEAD>
+<BODY onLoad="focus()" bgcolor="#000080" marginwidth=0 marginheight=0
+margintop=0 marginbottom=0 marginleft=0 marginright=0>
+
+<CENTER>
+<TABLE width="100%" border=0 cellspacing=0 celpadding=5 bgcolor="#000080"><TR>
+<TD align="left" valign="top">
+<A href="../index.html"><IMG src="../images/htmlpp1.gif" width=100 height=75 alt="Htmlpp" border=0>
+</A></TD>
+<TD align="center" valign="center" colspan=4>
+<FONT color="#FFFF99" face="arial"><H1>Source Code Examples</H1></FONT>
+</TR><TR>
+<TD valign=TOP nowrap rowspan=2>
+&nbsp;<BR>
+<A href="../index.html" class="index" title="Htmlpp Homepage"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Home</FONT></A>&nbsp;<BR>
+<A href="../introduction/index.html" class="index" title="What is Htmlpp and how to start using it"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Introduction</FONT></A>&nbsp;<BR>
+<A href="../download/index.html" class="index" title="How to get Htmlpp and how to install it"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Download</FONT></A>&nbsp;<BR>
+<A href="../docs/index.html" class="index" title="Htmlpp documentation: Reference, FAQ, Known bugs..."><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Docs</FONT></A>&nbsp;<BR>
+<A href="../support/index.html" class="index" title="What to do if you have problems with Htmlpp"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Support</FONT></A>&nbsp;<BR>
+<A href="index.html" class="index" title="Examples of Htmlpp source code"><IMG src="../images/sunken.gif" width=36 height=45 alt="" border=0 align=middle>
+&nbsp;<FONT color="#CCFFFF" face="arial"><STRONG>Examples</STRONG></FONT></A>&nbsp;<BR>
+<A href="../addons/index.html" class="index" title="Utilities to improve your productivity with Htmlpp"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Add-ons</FONT></A>&nbsp;<BR>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="fullsites.html">Full Sites</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="white"><FONT face="arial"><STRONG>Snippets</STRONG></FONT></TD>
+<TD bgcolor="#000080"></TD>
+</TR><TR>
+<TD valign=top bgcolor="white" colspan=4 >
+<DIV style="padding-left:15pt;padding-right:10pt;padding-top:10pt;padding-bottom:5pt;">
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC6">Making a Calendar</A></H2></FONT>
+<P align="right"><FONT color="#000080"><EM>Contributed by <A href="http://www.eco.uc3m.es/~ebb/">Enrique Bengoechea</A></EM></FONT>
+<P>Making a calendar is easy with the built-in dates function provided in htmlpp.
+Here you have an example of a simple calendar, which you may customize to your needs.
+It is issued whenever the block <CODE>calendar</CODE> is built. You must have defined
+the global variables <CODE>$(month)</CODE> and <CODE>$(year)</CODE> before building the block.
+
+<P><TABLE bgcolor="silver">
+<TR cellpading=5><TD align="left" bgcolor="lightblue"><STRONG><FONT face="arial">Making a Calendar: Source Code</FONT></STRONG></TD>
+<TD bgcolor="lightblue" align="right">Download:
+<A href="../sources/snippets/calendar.htp">calendar.htp</A>
+(817 bytes)</TD></TR>
+<TR><TD align="left" colspan=2>
+<CODE>1&nbsp;|&nbsp;<STRONG>.block</STRONG> calendar<BR>
+2&nbsp;|&nbsp;<FONT color="darkblue">&lt;TABLE border=1&gt;&lt;TR&gt;</FONT><BR>
+3&nbsp;|&nbsp;<FONT color="darkblue">&lt;TH colspan=7&gt;</FONT>&date(&quot;mmmm yyyy&quot;,&quot;$(year)$(month)01&quot;)<FONT color="darkblue">&lt;/TH&gt;&lt;/TR&gt;</FONT><BR>
+4&nbsp;|&nbsp;<FONT color="darkblue">&lt;TR&gt;&lt;TH&gt;</FONT>Sun<FONT color="darkblue">&lt;/TH&gt;</FONT><BR>
+5&nbsp;|&nbsp;<FONT color="darkblue">&lt;TH&gt;</FONT>Mon<FONT color="darkblue">&lt;/TH&gt;</FONT><BR>
+6&nbsp;|&nbsp;<FONT color="darkblue">&lt;TH&gt;</FONT>Tue<FONT color="darkblue">&lt;/TH&gt;</FONT><BR>
+7&nbsp;|&nbsp;<FONT color="darkblue">&lt;TH&gt;</FONT>Wed<FONT color="darkblue">&lt;/TH&gt;</FONT><BR>
+8&nbsp;|&nbsp;<FONT color="darkblue">&lt;TH&gt;</FONT>Thu<FONT color="darkblue">&lt;/TH&gt;</FONT><BR>
+9&nbsp;|&nbsp;<FONT color="darkblue">&lt;TH&gt;</FONT>Fri<FONT color="darkblue">&lt;/TH&gt;</FONT><BR>
+10|&nbsp;<FONT color="darkblue">&lt;TH&gt;</FONT>Sat<FONT color="darkblue">&lt;/TH&gt;&lt;/TR&gt;</FONT><BR>
+11|&nbsp;<BR>
+12|&nbsp;<FONT color="green"><EM>.- print a number of empty cells depending on which</FONT></EM><BR>
+13|&nbsp;<FONT color="green"><EM>.- day of the week is the first day of the month</FONT></EM><BR>
+14|&nbsp;<STRONG>.if</STRONG> &week_day(&quot;$(year)$(month)01&quot;) != 0<BR>
+15|&nbsp;<STRONG>.for</STRONG> i from 1 to &week_day(&quot;$(year)$(month)01&quot;)<BR>
+16|&nbsp;<FONT color="darkblue">&lt;TD&gt;&lt;/TD&gt;</FONT><BR>
+17|&nbsp;<STRONG>.endfor</STRONG><BR>
+18|&nbsp;<STRONG>.endif</STRONG><BR>
+19|&nbsp;<BR>
+20|&nbsp;<FONT color="green"><EM>.- Loop through the maximum number of days a month may have...</FONT></EM><BR>
+21|&nbsp;<STRONG>.for</STRONG> i from 0 to 30<BR>
+22|&nbsp;<FONT color="green"><EM>.- ...but only if it's a day in the same month</FONT></EM><BR>
+23|&nbsp;<STRONG>. if</STRONG> '&date(&quot;mm&quot;,&future_date($(i),&quot;$(year)$(month)01&quot;))' eq '$(month)'<BR>
+24|&nbsp;<FONT color="darkblue">&lt;TD&gt;</FONT>&(&quot;$(i)+1&quot;)<FONT color="darkblue">&lt;/TD&gt;</FONT>\<BR>
+25|&nbsp;<FONT color="green"><EM>.- New table row if it's saturday</FONT></EM><BR>
+26|&nbsp;<STRONG>. &nbsp;if</STRONG> &week_day(&future_date($(i),&quot;$(year)$(month)01&quot;)) == 6<BR>
+27|&nbsp;<FONT color="darkblue">&lt;/TR&gt;</FONT><BR>
+28|&nbsp;<STRONG>. &nbsp;endif</STRONG><BR>
+29|&nbsp;<STRONG>. endif</STRONG><BR>
+30|&nbsp;<STRONG>.endfor</STRONG><BR>
+31|&nbsp;<FONT color="darkblue">&lt;/TABLE&gt;</FONT><BR>
+32|&nbsp;<STRONG>.endblock</STRONG><BR>
+</CODE>
+</TD></TR></TABLE>
+
+
+<P>Thus, the following code:
+<PRE>
+.define month 10
+.define year 1999
+.build calendar
+</PRE>
+generates the following output:
+<P><CENTER>
+<TABLE border=1><TR>
+<TH colspan=7>October 1999</TH></TR>
+<TR><TH>Sun</TH>
+<TH>Mon</TH>
+<TH>Tue</TH>
+<TH>Wed</TH>
+<TH>Thu</TH>
+<TH>Fri</TH>
+<TH>Sat</TH></TR>
+
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+
+<TD>1</TD><TD>2</TD></TR>
+<TD>3</TD><TD>4</TD><TD>5</TD><TD>6</TD><TD>7</TD><TD>8</TD><TD>9</TD></TR>
+<TD>10</TD><TD>11</TD><TD>12</TD><TD>13</TD><TD>14</TD><TD>15</TD><TD>16</TD></TR>
+<TD>17</TD><TD>18</TD><TD>19</TD><TD>20</TD><TD>21</TD><TD>22</TD><TD>23</TD></TR>
+<TD>24</TD><TD>25</TD><TD>26</TD><TD>27</TD><TD>28</TD><TD>29</TD><TD>30</TD></TR>
+<TD>31</TD></TABLE>
+</CENTER>
+</DIV>
+<HR color="darkblue" noshade>
+<TABLE width="100%" border=0><TR>
+<TD width="10" align=left valign=middle><A href="snippet.html"><IMG src="../images/prev.gif" width=10 height=19 alt="Previous" border=0>
+</A></TD>
+<TD>
+<TABLE width="100%" border=0><TR>
+<TD align="left" valign="bottom" width="40%"><FONT size="-2" face="arial"><A href="snippet.html">Previous Snippet</A></FONT><BR>
+<FONT size="-1">Using Blocks as Macros</FONT></TD>
+<TD align="center" valign="middle" width="20%"><A href="snippets.html"><IMG src="../images/up.gif" width=19 height=10 alt="Snippets List" border=0>
+</A><BR>
+<FONT size="-2" face="arial"><A href="snippets.html">Snippets List</A></FONT></TD>
+<TD align=right valign="bottom" width="40%"><FONT size="-2" face="arial"><A href="snippet2.html">Next Snippet</A></FONT><BR>
+<FONT size="-1">A macro for inserting images</FONT></TD>
+</TR></TABLE>
+<TD width="10" align=right valign=middle><A href="snippet2.html"><IMG src="../images/next.gif" width=10 height=19 alt="Next" border=0)</TD>
+</TR>
+</TABLE>
+</TD></TR>
+<TR><TD align="center" valign="bottom">
+<A href="http://www.imatix.com/"><IMG src="../images/im0096c.gif" width=96 height=36 alt="iMatix"  border=0>
+</A>
+</TD><TD colspan=4>
+<TABLE width="100%" border=0><TR><TD align="left">&nbsp;<BR>
+<FONT size=-1 color="#FFFF99">Copyright &copy; 1996-99
+iMatix Corporation.<BR> Hosted by <A href="http://www.openavenue.com/" class="footer">OpenAvenue.com</A>.
+Made with Htmlpp. Powered by <A href="http://www.xitami.com/" class="footer">Xitami</A>.</FONT></TD>
+<TD valign="top" align="right">&nbsp;<BR>
+<FONT size=-1 color="#FFFF99">Updated: December 20, 1999<BR>
+<A href="mailto:ebb@imatix.com?subject=Feedback on Htmlpp.org site" class="footer">Feedback</A></FONT>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</BODY></HTML>

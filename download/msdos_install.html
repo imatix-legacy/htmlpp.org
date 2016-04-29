@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML lang=en><HEAD>
+<!--Revised: 16 Dec, 1999 By: Enrique Bengoechea-->
+<META http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<META name=author content="Enrique Bengoechea">
+<TITLE>htmlpp: Downloading and Installing</TITLE>
+<STYLE type="text/css">
+<!--
+BODY {margin: 0em}
+A.footer {color: #CCFFFF}
+A.index {text-decoration: none}
+-->
+</STYLE>
+</HEAD>
+<BODY onLoad="focus()" bgcolor="#000080" marginwidth=0 marginheight=0
+margintop=0 marginbottom=0 marginleft=0 marginright=0>
+
+<CENTER>
+<TABLE width="100%" border=0 cellspacing=0 celpadding=5 bgcolor="#000080"><TR>
+<TD align="left" valign="top">
+<A href="../index.html"><IMG src="../images/htmlpp1.gif" width=100 height=75 alt="Htmlpp" border=0>
+</A></TD>
+<TD align="center" valign="center" colspan=8>
+<FONT color="#FFFF99" face="arial"><H1><A NAME="TOC12">Downloading and Installing</A></H1></FONT>
+</TR><TR>
+<TD valign=TOP nowrap rowspan=2>
+&nbsp;<BR>
+<A href="../index.html" class="index" title="Htmlpp Homepage"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Home</FONT></A>&nbsp;<BR>
+<A href="../introduction/index.html" class="index" title="What is Htmlpp and how to start using it"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Introduction</FONT></A>&nbsp;<BR>
+<IMG src="../images/sunken.gif" width=36 height=45 alt="Download" border=0 align=middle>
+&nbsp;<FONT color="#CCFFFF" face="arial"><STRONG>Download</STRONG></FONT>&nbsp;<BR>
+<A href="../docs/index.html" class="index" title="Htmlpp documentation: Reference, FAQ, Known bugs..."><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Docs</FONT></A>&nbsp;<BR>
+<A href="../support/index.html" class="index" title="What to do if you have problems with Htmlpp"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Support</FONT></A>&nbsp;<BR>
+<A href="../examples/index.html" class="index" title="Examples of Htmlpp source code"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Examples</FONT></A>&nbsp;<BR>
+<A href="../addons/index.html" class="index" title="Utilities to improve your productivity with Htmlpp"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Add-ons</FONT></A>&nbsp;<BR>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="index.html">Download</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="unix_install.html">Unix&nbsp;Install</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="white"><FONT face="arial"><STRONG>MSDOS&nbsp;Install</STRONG></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="win32_install.html">Win32&nbsp;Install</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+</TR><TR>
+<TD valign=top bgcolor="white" colspan=8 >
+<DIV style="padding-left:15pt;padding-right:10pt;padding-top:10pt;padding-bottom:5pt;">
+
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC13">Installation Under MS-DOS</A></H2></FONT>
+
+<UL>
+<LI>You must have Perl 5.x on your system.
+<LI><A href="index.html">Download</A> htmlpXXX.zip.
+<LI>Make a directory for the contents of this distribution:
+<PRE>mkdir C:\htmlpp
+</PRE>
+<LI>Unzip the downloaded archive and copy the unzipped files to the new directory:
+<PRE>copy *.* C:\htmlpp
+</PRE>
+<LI>Check <TT>htmlpp.bat</TT> - it assumes that the files are installed in
+<TT>C:\SPECIAL</TT>, which is how my system is set-up.
+<LI>Change your <TT>autoexec.bat</TT> to define a variable
+<CODE>PERLLIB</CODE> if it is not defined yet.  On my system, this is defined like this:
+<CODE>set perllib=c:special;c:gnutools</CODE>.  Reboot or create a
+new DOS window.
+<LI>Run the <TT>htmlpp</TT> command without arguments.  You
+should get a message like this:<BR>
+<PRE>Htmlpp - a HTML pre-processor V4.2a
+This is free software and may be freely modified and distributed.
+Copyright (c) 1996-99 iMatix Corporation - http://www.imatix.com/
+
+syntax: htmlpp [-debug] [-guru] [-env] [-nofunc] [-page list]
+               [-set name=value] [-charset value] &lt;filename&gt;...
+
+ -debug    Leave work files: useful for debugging macros and loops
+ -guru     Work in Guru Mode
+ -env      Load all environment variables into document symbol table
+ -nofunc   Ignore unknown intrinsic functions (&xxx)
+ -page     Produce only specified pages; list can take any of these
+           forms: 'nn', 'nn-nn', 'nn,nn,nn'.  E.g. -page 1 -page 3,7
+           You can also refer to output filenames: -page index3.htm
+ -set      Set symbol value. This override any default settings or
+           settings made from within the htmlpp input.
+ -charset  Define the character set for the source input.
+           Valid values are 'iso-8859-1' and 'ms-dos'.
+</PRE>
+</UL>
+</DIV>
+</TD></TR>
+<TR><TD align="center" valign="bottom">
+<A href="http://www.imatix.com/"><IMG src="../images/im0096c.gif" width=96 height=36 alt="iMatix"  border=0>
+</A>
+</TD><TD colspan=8>
+<TABLE width="100%" border=0><TR><TD align="left">&nbsp;<BR>
+<FONT size=-1 color="#FFFF99">Copyright &copy; 1996-99
+iMatix Corporation.<BR> Hosted by <A href="http://www.openavenue.com/" class="footer">OpenAvenue.com</A>.
+Made with Htmlpp. Powered by <A href="http://www.xitami.com/" class="footer">Xitami</A>.</FONT></TD>
+<TD valign="top" align="right">&nbsp;<BR>
+<FONT size=-1 color="#FFFF99">Updated: October 20, 1999<BR>
+<A href="mailto:ebb@imatix.com?subject=Feedback on Htmlpp.org site" class="footer">Feedback</A></FONT>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</BODY></HTML>

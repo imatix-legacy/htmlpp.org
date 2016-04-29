@@ -1,0 +1,2075 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML lang=en><HEAD>
+<!--Revised: 16 Dec, 1999 By: Enrique Bengoechea-->
+<META http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<META name=author content="Enrique Bengoechea">
+<TITLE>htmlpp: Htmlpp Documentation</TITLE>
+<STYLE type="text/css">
+<!--
+BODY {margin: 0em}
+A.footer {color: #CCFFFF}
+A.index {text-decoration: none}
+-->
+</STYLE>
+</HEAD>
+<BODY onLoad="focus()" bgcolor="#000080" marginwidth=0 marginheight=0
+margintop=0 marginbottom=0 marginleft=0 marginright=0>
+
+<CENTER>
+<TABLE width="100%" border=0 cellspacing=0 celpadding=5 bgcolor="#000080"><TR>
+<TD align="left" valign="top">
+<A href="../index.html"><IMG src="../images/htmlpp1.gif" width=100 height=75 alt="Htmlpp" border=0>
+</A></TD>
+<TD align="center" valign="center" colspan=10>
+<FONT color="#FFFF99" face="arial"><H1>Htmlpp Documentation</H1></FONT>
+</TR><TR>
+<TD valign=TOP nowrap rowspan=2>
+&nbsp;<BR>
+<A href="../index.html" class="index" title="Htmlpp Homepage"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Home</FONT></A>&nbsp;<BR>
+<A href="../introduction/index.html" class="index" title="What is Htmlpp and how to start using it"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Introduction</FONT></A>&nbsp;<BR>
+<A href="../download/index.html" class="index" title="How to get Htmlpp and how to install it"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Download</FONT></A>&nbsp;<BR>
+<A href="index.html" class="index" title="Htmlpp documentation: Reference, FAQ, Known bugs..."><IMG src="../images/sunken.gif" width=36 height=45 alt="" border=0 align=middle>
+&nbsp;<FONT color="#CCFFFF" face="arial"><STRONG>Docs</STRONG></FONT></A>&nbsp;<BR>
+<A href="../support/index.html" class="index" title="What to do if you have problems with Htmlpp"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Support</FONT></A>&nbsp;<BR>
+<A href="../examples/index.html" class="index" title="Examples of Htmlpp source code"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Examples</FONT></A>&nbsp;<BR>
+<A href="../addons/index.html" class="index" title="Utilities to improve your productivity with Htmlpp"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Add-ons</FONT></A>&nbsp;<BR>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="stable.html">v.4.2a Ref</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="white"><FONT face="arial"><STRONG>v.4.2c Ref</STRONG></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="FAQ.html">FAQ</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="bugs.html">Known Bugs</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="history.html">History</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+</TR><TR>
+<TD valign=top bgcolor="white" colspan=10 >
+<DIV style="padding-left:15pt;padding-right:10pt;padding-top:10pt;padding-bottom:5pt;">
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt">Version 4.2c Reference</H2></FONT>
+<UL>
+<LI><A href="develop.html#TOC53">Description</A>
+<LI><A href="develop.html#TOC54">Command-line Syntax</A>
+<LI><A href="develop.html#TOC55">Inserting Symbols</A>
+<LI><A href="develop.html#TOC56">Types of Symbol</A>
+<LI><A href="develop.html#TOC57">Standard Symbols</A>
+<LI><A href="develop.html#TOC58">Database Symbols and Connections Between Documents</A>
+<LI><A href="develop.html#TOC59">Htmlpp Commands</A>
+<UL>
+<LI><A href="develop.html#define_command">The .define Command</A>
+<LI><A href="develop.html#macro_command">The .macro Command</A>
+<LI><A href="develop.html#endmacro_command">The .endmacro Command</A>
+<LI><A href="develop.html#include_command">The .include Command</A>
+<LI><A href="develop.html#page_command">The .page Command</A>
+<LI><A href="develop.html#pipe_command">The .pipe Command</A>
+<LI><A href="develop.html#expires_command">The .expires Command</A>
+<LI><A href="develop.html#ignore_command">The .ignore Command</A>
+<LI><A href="develop.html#if_command">The .if Command</A>
+<LI><A href="develop.html#block_command">The .block Command</A>
+<LI><A href="develop.html#endblock_command">The .endblock Command</A>
+<LI><A href="develop.html#build_command">The .build Command</A>
+<LI><A href="develop.html#perl_command">The .perl Command</A>
+<LI><A href="develop.html#echo_command">The .echo Command</A>
+<LI><A href="develop.html#for_command">The .for Command</A>
+<LI><A href="develop.html#loaddb_command">The .loaddb Command</A>
+<LI><A href="develop.html#savedb_command">The .savedb Command</A>
+<LI><A href="develop.html#defaultdb_command">The .defaultdb Command</A>
+<LI><A href="develop.html#connect_command">The .connect Command</A>
+</UL>
+<LI><A href="develop.html#TOC79">Htmlpp Macro Processing</A>
+<LI><A href="develop.html#TOC80">Multilingual support</A>
+<UL>
+<LI><A href="develop.html#TOC81">Support For Accented Characters</A>
+<LI><A href="develop.html#TOC82">Dates Formatting</A>
+<LI><A href="develop.html#TOC83">Multilingual Variables</A>
+<LI><A href="develop.html#TOC84">Generating Several Language Versions from a Single Source File</A>
+</UL>
+<LI><A href="develop.html#TOC85">Htmlpp Guru Mode</A>
+<UL>
+<LI><A href="develop.html#TOC86">Standard Guru Mode Definitions</A>
+<LI><A href="develop.html#TOC87">Chapter and Section Headers</A>
+<LI><A href="develop.html#TOC88">Table of Contents</A>
+<LI><A href="develop.html#TOC89">Pagination</A>
+<LI><A href="develop.html#TOC90">Page Headers and Footers</A>
+<LI><A href="develop.html#TOC91">Paragraphs</A>
+<LI><A href="develop.html#TOC92">Preformatted Text</A>
+<LI><A href="develop.html#TOC93">Bulleted and Numbered Lists</A>
+<LI><A href="develop.html#TOC94">Definition Lists</A>
+<LI><A href="develop.html#TOC95">Tables</A>
+<LI><A href="develop.html#TOC96">Figures and Images</A>
+<LI><A href="develop.html#TOC97">Hyperlinks</A>
+<LI><A href="develop.html#TOC98">Special Characters</A>
+</UL>
+<LI><A href="develop.html#TOC99">Htmlpp Intrinsic Functions</A>
+<UL>
+<LI><A href="develop.html#TOC100">The &date Function</A>
+<LI><A href="develop.html#TOC101">The &time Function</A>
+<LI><A href="develop.html#TOC102">The &week_day Function</A>
+<LI><A href="develop.html#TOC103">The &year_week Function</A>
+<LI><A href="develop.html#TOC104">The &julian_date Function</A>
+<LI><A href="develop.html#TOC105">The &lillian_date Function</A>
+<LI><A href="develop.html#TOC106">The &date_to_days Function</A>
+<LI><A href="develop.html#TOC107">The &days_to_date Function</A>
+<LI><A href="develop.html#TOC108">The &future_date Function</A>
+<LI><A href="develop.html#TOC109">The &past_date Function</A>
+<LI><A href="develop.html#TOC110">The &date_diff Function</A>
+<LI><A href="develop.html#TOC111">The &image_width Function</A>
+<LI><A href="develop.html#TOC112">The &image_height Function</A>
+<LI><A href="develop.html#TOC113">The &file_size Function</A>
+<LI><A href="develop.html#TOC114">The &file_date Function</A>
+<LI><A href="develop.html#TOC115">The &file_time Function</A>
+<LI><A href="develop.html#TOC116">The &normalise Function</A>
+<LI><A href="develop.html#TOC117">The &system Function</A>
+<LI><A href="develop.html#TOC118">The &upper Function</A>
+<LI><A href="develop.html#TOC119">The &lower Function</A>
+<LI><A href="develop.html#TOC120">The &pageref Function</A>
+<LI><A href="develop.html#TOC121">The &relpath Function</A>
+</UL>
+<LI><A href="develop.html#TOC122">Multipass Processing</A>
+<LI><A href="develop.html#TOC123">Multipass Debugging</A>
+<LI><A href="develop.html#TOC124">Other Things to Know</A>
+</UL>
+
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC53">Description</A></H2></FONT>
+
+<P>Htmlpp is a preprocessor for HTML files, and is intended to simplify the
+task of maintaining large sets of HTML documents. You provide htmlpp with a
+document that is a mix of HTML-tagged text and htmlpp commands. Htmlpp
+generates a set of HTML files from that document.
+
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC54">Command-line Syntax</A></H2></FONT>
+
+<P>To run htmlpp, use the following syntax:
+<PRE>htmlpp [-option...] filename ...
+</PRE>
+<P>Where <EM>filename</EM> is assumed to have an extension '.htp' if
+necessary.  You can use these command-line options:
+<UL>
+<LI>The -debug option causes htmlpp to leave all its intermediate
+work files lying around. It will also make a backup copy of any database file it
+modifies, as well as backup copies of internal files connect.def and expires.def
+unless you redefine standard symbol $(BACKUP).
+Backup copies have extension '.bak'.
+<LI>The -guru option makes htmlpp work in guru mode, which is explained in
+the <A href="stable.html#guru">Htmlpp Guru Mode</A> section.
+<LI>The -env option tells htmlpp to include the current environment in the
+symbol table.
+<LI>The -nofunc option disables checking of intrinsic functions; this can be
+useful if your input text contains Perl code (which can itself contain lots
+of functions prefixed by '&'.
+<LI>The -charset option defines the character set used in the source file.
+This is used to translate accented characters into HTML character entity
+references. Valid values are 'iso-8859-1' (you can also use 'latin-1',
+'unix' and 'win' as synonymous) and 'ms-dos' (use also 'dos' or 'cp850' as
+synonymous).
+<LI>The -noconnect option deactivates htmlpp storing connections between
+documents. Connections are explained in the
+<A href="develop.html#db_symbols">Database Symbols and Connections Between Documents</A> section.
+<LI>The -connect option makes htmlpp automatically process all connected
+documents when some database symbol changes its value in current document.
+<LI>The -expired option process all documents that have expired.
+You define a document to expire at a given date using the .expires command.
+<LI>The -page option lets you select one or more pages to generate. If you do
+not use this option, htmlpp's default action is to generate every page in
+the document. You can generate the first page only by using this command:
+<PRE>htmlpp -page 1 xxxx
+</PRE>
+You can generate a series of specific pages too:
+<PRE>htmlpp -page 1,9-10,15 xxxx
+</PRE>
+You can also refer to page file names, instead of page numbers (but not
+using the 'nn-nn' syntax:
+<PRE>htmlpp -page justhis.htm,andthat.htm xxxx
+</PRE>
+<LI>The -set option lets you set values from the command line; these
+override any default settings or settings made from within the htmlpp input.
+The syntax of this option is:
+<PRE>-set name=value
+</PRE>
+For example,
+<PRE>htmlpp -set BASE=temp myfile.txt
+</PRE>
+Under DOS, you must enclose name=value in quotes, e.g.:
+<PRE>htmlpp -set "BASE=temp" myfile.txt
+</PRE>
+</UL>
+<P>All command line options can be shortened to their significant letters,
+e.g. '-d' is the same as '-debug'.
+
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC55">Inserting Symbols</A></H2></FONT>
+
+<P>Htmlpp replaces symbols in command lines and HTML text. You can specify a
+symbol in various ways:
+
+<DL>
+<DT>$(name)
+<DD>Inserts the symbol <EM>name</EM>. If it is not defined and the multilingual
+symbols option is turned on (see $(USE_LANG) variable below),
+htmlpp will also search for the symbol <EM>name.xx</EM> where <EM>xx</EM> is
+the current language code (see $(LANG) variable below).
+<EM>name</EM> can also be a database symbol (see section on
+<A href="develop.html#db_symbols">database symbols</A> below).
+If none of the symbols is defined (see .define command below) you get an error
+message.
+
+<DT>$(name?default)
+<DD>Inserts the symbol <EM>name</EM>. If it is not defined
+and the multilingual symbols option is turned on, it will also search for the
+symbol <EM>name.xx</EM> where <EM>xx</EM> is the current language code.
+<EM>name</EM> can also be a <A href="develop.html#db_symbols">database symbol</A>. If none
+of the symbols is defined, inserts the supplied default value.
+
+<DT>$(*name)
+<DD>Inserts a link for the symbol <EM>name</EM>.  This is
+shorthand for:
+<PRE>&lt;A HREF="$(name)"&gt;name&lt;/A&gt;.</PRE>
+If the symbol is not defined and the multilingual symbols option is turned on,
+it will also search for the symbol
+<EM>name.xx</EM> where <EM>xx</EM> is the current language code.
+Also, if <EM>name</EM> already includes a language code (e.g. $(*home.es))
+which is different from the current language and the multilingual symbols option
+is turned on, the HTML 4.0 &quot;hreflang=xx&quot; attribute is automatically
+added in the &lt;A...&gt; tag.<BR>
+<EM>name</EM> can also be a <A href="develop.html#db_symbols">database symbol</A>.
+If both symbols <EM>name</EM> and <EM>name.$(LANG)</EM> have an empty value,
+the &lt;A...&gt; and &lt;/A&gt; tags are left-out - i.e. the link is not
+active.
+
+<DT>$(*name*attributes*)
+<DD>Inserts a link for the symbol <EM>name</EM> including <EM>attributes</EM>
+within the &lt;A...&gt; tag. It is useful is you are using some of
+the new attributes in HTML 4.0. This is shorthand for:
+<PRE>&lt;A HREF="$(name)" attributes&gt;name&lt;/A&gt;.</PRE>
+If the symbol is not defined and the multilingual symbols option is turned on,
+it will also search for the symbol
+<EM>name.xx</EM> where <EM>xx</EM> is the current language code.
+Also, if <EM>name</EM> already includes a language code (e.g. $(*home.es))
+that is different from the current language and the multilingual symbols option
+is turned on, the HTML 4.0 &quot;hreflang=xx&quot; attribute is automatically
+added in the &lt;A...&gt; tag.<BR>
+<EM>name</EM> can also be a <A href="develop.html#db_symbols">database symbol</A>.
+If both symbols <EM>name</EM> and <EM>name.$(LANG)</EM> have an empty value,
+the &lt;A...&gt; and &lt;/A&gt; tags are left-out.
+
+<DT>$(*name=label)
+<DT>$(*name="label")
+<DD>Inserts a link for the symbol <EM>name</EM>, with label as
+specified. This is shorthand for:
+<PRE>&lt;A HREF="$(name)"&gt;label&lt;/A&gt;.</PRE>
+If the symbol is not defined and the multilingual symbols option is turned on,
+it will also search for the symbol
+<EM>name.xx</EM> where <EM>xx</EM> is the current language code.
+Also, if <EM>name</EM> already includes a language code (e.g. $(*home.es))
+that is different from the current language and the multilingual symbols option
+is turned on, the HTML 4.0 &quot;hreflang=xx&quot; attribute is automatically
+added in the &lt;A...&gt; tag.<BR>
+<EM>name</EM> can also be a <A href="develop.html#db_symbols">database symbol</A>.
+If both symbols <EM>name</EM> and <EM>name.$(LANG)</EM> have an empty value,
+the &lt;A...&gt; and &lt;/A&gt; tags are left-out. You can use double quotes if
+the label itself contains ')' or its first character is '*'.
+
+<DT>$(*name*attributes*=label)
+<DT>$(*name*attributes*="label")
+<DD>Inserts a link for the symbol <EM>name</EM>, with label as
+specified, and including <EM>attributes</EM> within the &lt;A...&gt; tag.
+This is shorthand for:
+<PRE>&lt;A HREF="$(name)" attributes&gt;label&lt;/A&gt;.</PRE>
+If the symbol is not defined
+and the multilingual symbols option is turned on, it will also search for the
+symbol <EM>name.xx</EM> where <EM>xx</EM> is the current language code.
+Also, if <EM>name</EM> already includes a language code (e.g. $(*home.es))
+that is different from the current language and the multilingual symbols option
+is turned on, the HTML 4.0 &quot;hreflang=xx&quot; attribute is automatically
+added in the &lt;A...&gt; tag.<BR>
+<EM>name</EM> can also be a <A href="develop.html#db_symbols">database symbol</A>.
+If both symbols <EM>name</EM> and <EM>name.$(LANG)</EM> have an empty value,
+the &lt;A...&gt; and &lt;/A&gt; tags are left-out. You can use double quotes if
+the label itself contains ')'.
+
+<DT>$(*name=)
+<DD>Inserts a link for the symbol <EM>name</EM>, with the full
+reference as label.  This is shorthand for:
+<PRE>&lt;A HREF="$(name)"&gt;$(name)&lt;/A&gt;.</PRE>
+If the symbol is not defined
+and the multilingual symbols option is turned on, it will also search for the
+symbol <EM>name.xx</EM> where <EM>xx</EM> is the current language code.
+Also, if <EM>name</EM> already includes a language code (e.g. $(*home.es))
+that is different from the current language and the multilingual symbols option
+is turned on, the HTML 4.0 &quot;hreflang=xx&quot; attribute is automatically
+added in the &lt;A...&gt; tag.<BR>
+<EM>name</EM> can also be a <A href="develop.html#db_symbols">database symbol</A>.
+
+<DT>$(*name=*attributes*)
+<DD>Inserts a link for the symbol <EM>name</EM>, with the full
+reference as label, and including <EM>attributes</EM> within the
+&lt;A...&gt; tag.  This is shorthand for:
+<PRE>&lt;A HREF="$(name)" attributes&gt;$(name)&lt;/A&gt;.</PRE>
+If the symbol is not defined
+and the multilingual symbols option is turned on, it will also search for the
+symbol <EM>name.xx</EM> where <EM>xx</EM> is the current language code.
+Also, if <EM>name</EM> already includes a language code (e.g. $(*home.es))
+that is different from the current language and the multilingual symbols option
+is turned on, the HTML 4.0 &quot;hreflang=xx&quot; attribute is automatically
+added in the &lt;A...&gt; tag.<BR>
+<EM>name</EM> can also be a <A href="develop.html#db_symbols">database symbol</A>.
+
+<DT>&(Perl program fragment)
+<DD>Replaces the symbol by the output of the specified Perl code.
+The Perl code is executed using the eval command -- see your Perl
+documentation if you want to use this feature.  This is how to
+replace the symbol by the output of a Perl program:
+&(`perl <EM>program</EM>`).  You must enclose the program fragment
+in double quotes if it contains ( or ), or else escape these characters
+using '\'.
+
+<DT>&name(arguments)
+<DD>Replaces the symbol by the result of an
+<A href="stable.html#intrinsic">intrinsic function</A>.  These are predefined functions
+that htmlpp provides for various purposes.
+
+<DT>%(variable)
+<DD>Replaces the symbol by the value of an environment variable.
+If the variable does not exist, inserts an empty value.  For
+portability, always define environment variables in uppercase.
+
+<DT>%(variable?default)
+<DD>Replaces the symbol by the value of an environment variable.
+If the variable does not exist, inserts the specified default value.
+For portability, always define environment variables in uppercase.
+
+<DT>\(
+<DD>Replaces this by "(".  This is to 'escape' symbol definitions so
+that they are not translated.
+
+<DT>\.
+<DD>Replaces this by ".".  This is to 'escape' dots so that they are
+not interpreted as commands, at the start of a line.
+</DL>
+
+<P>You can define symbols in terms of symbols: $($(name)) is
+quite okay, if you know what you are doing.  Htmlpp inserts
+symbols from right to left in the line.
+
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC56">Types of Symbol</A></H2></FONT>
+
+<P>Symbols are of various types
+<UL>
+<LI>htmlpp provides various symbols when building certain blocks
+like the table of contents;
+<LI>htmlpp provides various symbols containg default values that
+you can redefine if necessary;
+<LI>you can define symbols using the .define command;
+<LI>you can define symbols using the .build anchor command;
+<LI>you can define database symbols after a .savedb command;
+<LI>symbols can be defined for several languages if you are running a
+multilingual site.
+</UL>
+
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC57">Standard Symbols</A></H2></FONT>
+
+<P>Htmlpp provides these standard symbols for use at any point in
+the document:
+<DL>
+<DT>$(DATE)
+<DD>The date that htmlpp started, formatted as an 8-character
+string: YY/MM/DD.
+<DT>$(TIME)
+<DD>The time that htmlpp started, formatted as an 8-character
+string: HH:MM:SS.
+<DT>$(DOCBASE)
+<DD>The main document filename, without extension.
+<DT>$(INC)
+<DD>A counter, which starts at zero and is bumped-up each time you
+refer to it.  I use this to number filenames, in the .page
+command.  The first time you use $(INC), it is empty - i.e. "".
+The second time it is "1", then "2", "3", "many", "manymany", and
+"manymanymany" (joke, sorry).
+<DT>$(PAGE)
+<DD>After a .page command, this holds the page filename, exactly
+as specified in the .page command.
+<DT>$(TITLE)
+<DD>After a .page command, this holds the page title.  It is nice
+to use this in the header block.
+<DT>$(PIPE_TITLE)
+<DD>After a .pipe command, this holds the pipe title.  It is nice
+to use this in the pipe_header block.
+<DT>$(PASS)
+<DD>Contains either 0 or 1, depending on whether htmlpp is
+scanning for titles (0) or building the output files (1).
+<DT>$(HITS)
+<DD>The number of rows returned in the last one of any of the following types
+of .for loops:
+<PRE>   .for <EM>name</EM> in `<EM>command</EM>`
+   .for <EM>name</EM> in @<EM>filename</EM>
+   .for <EM>name</EM> in %<EM>filename</EM> [...]</PRE>
+It is undefined until the first of any of these .for loopS is used.
+If you use it after several nested .for loops, it will remember the hits
+of the outermost loop.
+</DL>
+You may want to (re)define some of these symbols:
+<DL>
+<DT>$(BASE)
+<DD>Defined as "doc".  This is used in .page commands for
+automatic filename generation.
+<DT>$(EXT)
+<DD>Defined as "htm", and commonly-used hot on the heels of a
+$(BASE).
+<DT>$(DIR)
+<DD>Defined as "." and used to prefix the filename for the generated HTML
+pages.
+<DT>$(SILENT)
+<DD>Defined as 0.  If you .define this as 1, htmlpp will try to be
+a bit quieter.  When you are generating *lots* of pages, it is
+easy to lose real warnings and errors amidst the information
+messages.
+<DT>$(LINEMAX)
+<DD>Defined as 79.  Htmlpp warns if it finds longer lines.  If
+you don't want to see these warnings, set it to 0.
+<DT>$(ESC_HYPHEN)
+<DD>Defined as 0. If you .define this as 1, you are allowed to escape
+trailing hyphens in Htmlpp commands by preceding them of a backslash -
+This symbol is new in version 4.2c, and is disactivated by default in order
+not to break old code, but take into account that escaping trailing hyphens
+will be the default behavior in future releases.
+<DT>$(END_MACRO)
+<DD>Defined as 0. If you .define this as 1, you enable the new command
+.endmacro to end macro definitions, and you don't need to add trailing
+hyphens in each continuation line of the macro.
+This symbol is new in version 4.2c, and is disactivated by default in order
+not to break old code, but take into account that the .endmacro command
+will be the default behavior in future releases.
+<DT>$(DEBUG_MODE)
+<DD>Has the value 1 when htmlpp is operating in debug mode, and 0
+otherwise.  To use debug mode, use the -debug command-line option.
+<DT>$(BACKUP)
+<DD>If it has value 1, htmlpp will make backup copies of any database it
+modifies and of internal files connect.def and expires.def, with the extension
+'.bak'. By default has value 1 in debug mode and 0 otherwise.
+<DT>$(NO_CONNECT)
+<DD>Has the value 1 when htmlpp does not store connections between documents,
+and 0 otherwise (default).
+To turn on no-connect mode, use the -noconnect command-line option.
+<DT>$(CONNECT)
+<DD>Has the value 1 when htmlpp automatically process all connected documents
+whenever a database symbol is modified in current document, and 0 otherwise
+(default). To use connect mode, use the -connect command-line option.
+<DT>$(LANG)
+<DD>A two-character code for the language that htmlpp will use
+in the formatting dates subroutines. It will also be used to search for symbols
+of type
+<EM>name.$(LANG)</EM> when multilingual variable search is activated.
+Its default value is "en" for English.
+Other supported languages are "es" for Spanish, "da" for Danish, and "fr"
+for French.
+<DT>$(USE_LANG)
+<DD>Defined as 0. If you .define this as 1, htmlpp will search multilingual
+symbols of type <EM>name.$(LANG)</EM>, and will add the hreflang attribute
+in &lt;A..&gt; tags when $(*name) already ends up with a .xx language code.
+<DT>$(USE_RELPATH)
+<DD>Defined as 0. If you .define this as 1, all $(*name) links whose URL
+does not start with "http://", "ftp:", "mailto:", "./", or "../" will be
+considered within-site absolute links and will be made relative.
+<DT>$(Hn)
+<DD>Where 'n' is 1 to 9, defines a header level number.  You would
+use this to generate headers like this:
+<PRE>1
+1.1
+1.2
+1.2.1
+1.2.2 ... etc.
+</PRE>
+Htmlpp automatically manages the numbering of header levels.  You
+are, however, limited to the 'dotted number' syntax.
+<DT>$(DB_DELIM)
+<DD>The delimiter that separates flat-text database fields used in .for
+database queries. Takes the value '|' by default.
+<DT>$(DB_ESC_DELIM)
+<DD>The string that substitutes the field delimiter in .for database queries
+if this is found in the data. Takes the value '~p~' by default.
+<DT>$(DB_ESC_NL)
+<DD>The string that substitutes new lines in .for database queries if these are
+found in the data (because each database entry must be in a single row).
+Takes the value '~nl~' by default.
+<DT>$(DB_COMMENT)
+ <DD>The string at the beginning of a flat-text database row which denotes
+that the row should be skipped. Takes the value 'COMMENT:' by default.
+<DT>$(DB_FIELDS)
+<DD>The string that, if it appears after $(DB_COMMENT) in a .for database
+query, denotes that the row contains the field labels for the database.
+Takes the value 'FIELDS:' by default.
+</DL>
+Unless you use .ignore pages, these symbols are available in
+header and footer blocks (you can use them elsewhere, but you'll
+get warnings):
+<DL>
+<DT>$(FIRST_PAGE)
+<DD>The filename for the first page of the document.
+<DT>$(LAST_PAGE)
+<DD>The filename for the last page of the document.
+<DT>$(NEXT_PAGE)
+<DD>The filename for the next page of the document.
+<DT>$(PREV_PAGE)
+<DD>The filename for the previous page of the document.
+<DT>$(FIRST_TITLE)
+<DD>The title for the first page of the document.
+<DT>$(LAST_TITLE)
+<DD>The title for the last page of the document.
+<DT>$(NEXT_TITLE)
+<DD>The title for the next page of the document.
+<DT>$(PREV_TITLE)
+<DD>The title for the previous first page of the document.
+</DL>
+<P>In addition, htmlpp will include the current environment symbols
+if you run it with the -env option.  You can use this (although I
+don't see the utility immediately) to redefine any of the standard
+symbols such as $(EXT). Remember that you can also access any of
+the environment symbols using the %(...) syntax; e.g. %(PATH).
+
+<A NAME="db_symbols">&nbsp;</A>
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC58">Database Symbols and Connections Between Documents</A></H2></FONT>
+<P>Database symbols are so called because they are stored in a flat-text
+database so that they can be accesed from any htmlpp document.
+
+<P>Databases of symbols are composed of rows where each row is an entry.
+Entries are identified uniquely by a field whose name must be "ID". Fields
+in each row are separated by a pipe ("|") symbol. If a symbol is stored in
+the database which itself contains a pipe symbol, it is escaped as "~p~".
+Because entries must be in a single row, new lines are also escaped as "~nl~".
+Comment lines may be included writing "COMMENT:" at the beginning.
+Field names <EM>must</EM> be defined in a comment line adding "FIELDS:" after
+the "COMMENT:" string.
+The line must be composed of pipe delimited field names, and
+determines the order in which symbols will be stored in the database.
+Don't forget the required "ID" field.
+If you include a "Last Modified:" string in a comment line, htmlpp will
+write the date and time it last updated the database.
+
+<P>To create a database of symbols you must first create a text file that
+defines the structure of the database, for example:
+
+<PRE>COMMENT: "pages.db"
+COMMENT: Database of pages for Enrique Bengoechea's WEB site.
+COMMENT: Last Modified:
+COMMENT:
+COMMENT: FIELDS: ID|url|title|description|section|subsection|created|modified
+COMMENT:
+COMMENT: This database is automatically updated by Htmlpp.
+COMMENT: If you modify it by hand, don't forget to replace any pipe and new
+COMMENT:  line characters in the data by ~p~ and ~nl~ respectively.
+COMMENT:
+</PRE>
+
+<P>To use database symbol you must first load the database in memory with the
+.loaddb command, for example:
+<PRE>.loaddb pages /databases/pages.db</PRE>
+(and optionally add query criteria to load only a subset of the database)
+In this example <CODE>pages</CODE> is the database code that will allow you to
+access the symbols in <CODE>pages.db</CODE>. To access the value of field
+<CODE>created</CODE> in entry <CODE>home</CODE> (that is, in the row whose first
+field, the one named "ID", has value <CODE>home</CODE>), you would write
+<PRE>$(pages#home#created)</PRE>
+You can also use the symbols in links, for example:
+<PRE>$(*pages#home#url=$(pages#home#title))</PRE>
+
+<P>If language symbol search is activated by setting variable $(USE_LANG) to 1,
+you can simplify <EM>name.xx</EM> to <EM>name</EM>, where <EM>xx</EM> is the
+current value of $(LANG), both for the entry ID and the field name.
+That is, if entry <CODE>home.es</CODE> and field <CODE>url.es</CODE> are
+defined, you can write <CODE>$(pages#home#url)</CODE> and it will be
+interpreted as <CODE>$(pages#home.es#url.es)</CODE> if $(LANG)=es.
+
+
+<P>Because the syntax is a bit long, you have the command .defaultdb to simplify
+your life. Make
+<PRE>.defaultdb pages</PRE>
+and $(#home#created) will be the same as $(pages#home#created).
+Make
+<PRE>.defaultdb pages created</PRE>
+and $(pages#home#) will be the same as $(pages#home#created).
+You can also mix both possibilities.
+
+<P>Remember that you can also access sorted series of database symbols using the
+<A href="develop.html#for_db">.for</A> command to query flat-text databases. This can be useful to
+create site-wide tables of contents, "What's New in This Site" pages and so on.
+
+<P>To add new entries to the database or modify existing entries, you must first
+use the command .savedb, for example
+<PRE>.savedb pages /databases/pages.db</PRE>
+Note that the code that identifies the database can be the same than the code
+you use in a .loaddb command for the same database or a different one.
+After the .savedb command, you can define database symbol in the same fashion as
+other symbols:
+<PRE>.define pages#home#created  19981101</PRE>
+You don't have to explicitly define the "ID" field. For example, in previous
+command htmlpp understands that <CODE>home</CODE> is the entry identifier. If it
+already exists, field <CODE>created</CODE> will be modified, and if it doesn't a
+new entry will be added to the database. If this is the case, a warning message
+will be issued (just in case you mistyped the entry ID).
+
+<P>Database symbols are also used to define connections between different htmlpp
+documents. htmlpp remembers all the documents where each database symbol is used
+by writing them to file connect.def (we highly recommend that you don't modify
+this file by hand), unless the -noconnect command-line option is activated.
+Whenever a database symbol is modified in a document, htmlpp will tell you to
+reprocess all files where the symbol is used, and if the -connect command-line
+option is turned on, it will process them automatically. This is useful in big
+and complex sites in which it is hard to remember where a given link, date,
+etc. is used.
+For example, if you modify an entry in the database of "What's New in This
+Site", Htmlpp will reprocess the document that summarizes all novelties and
+modifications in the site.
+Or, if a link changes its path, you don't have to remember that the link was
+used in other 30 documents, Htmlpp will remember it for you and process the 30
+documents so that the change is updated throughout the whole site.
+No more outdated information!
+
+<P>Realize that to use the connections characteristics you must have all the
+source htmlpp documents that compose the site in a single directory. Note also
+that if you identify entries in a database by the name of the source document
+(as you would tipically do in many situations) and you modify the name of that
+document at any moment, all connections for the old name will be kept, and you
+must erase them by hand, although a better solution is to erase the file
+connect.def from time to time and reprocess the whole site.
+It is important that in general you will have to process the site *TWICE* to
+get all cross-references solidly updated.
+
+<P>You can define standard symbol $(BACKUP) to 1 in order to htmlpp
+make a backup copy of any database it modifies, as well as backup copies of
+internal files connect.def and expires.def, all with extension '.bak'.
+$(BACKUP) is set to 1 by default in debug mode and to 0 otherwise.
+
+<P>Remember that you can also use the <A href="../UNDEF">.expires</A> command
+(possibly in conjunction with database symbols and some date-related intrinsic
+functions) as another powerful automatic site management tool. A good use of
+both features will make your site never be outdated.
+
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC59">Htmlpp Commands</A></H2></FONT>
+
+<P>A htmlpp command starts with a dot, in column 1, followed by a
+keyword.  You can put spaces between the dot and the keyword.  To
+continue the command line over the next line, end the line with a
+hyphen (though you need to at least put the dot and the keyword on
+the same line). If you need your line to end up with an hyphen, you may
+escape it with a backslash -
+Commands can be in upper- or lower-case: .endblock and .EndBlock are
+equivalent.
+
+<P>These are the commands that htmlpp understands:
+
+<H3><A name="define_command">The .define Command</A></H3>
+<DL>
+<DT>.define <EM>symbol</EM> [<EM>value</EM>]
+<DD>Define a symbol with the specified value.  The symbol name can
+consist of letters, digits, -, ., and _.  The value is everything
+else up to the end of the line.  If you omit the value, the
+variable is un-defined.  You can redefine a variable as often as
+you like simply by repeating the .define command.  Use lowercase
+for your own symbols.  Predefined htmlpp symbols are uppercase.
+Case is significant.  You can assign values to the built-in htmlpp
+variables like INC if you want to.  In some cases this is even
+useful. If you append .xx to the symbol name, where xx is a two-characters
+language code, you can afterwards use the variable as $(symbol) without
+writting the language code, provided $(USE_LANG)=1 and $(LANG)=xx.
+You should use standardized ISO-639 <A href="http://www.oasis-open.org/cover/iso639a.html">language codes</A>.
+You can define <A href="develop.html#db_symbols">database symbols</A> of the form
+<EM>database_code</EM>#<EM>entry_ID</EM>#<EM>field_name</EM> provided you
+previously used the .savedb command. All database symbols defined in this way
+will be stored in the database file. If you add/redefine with a different value
+a database symbol which is used in other htmlpp documents, htmlpp will also
+process all those 'connected' documents when the -connect command-line
+option is activated.
+
+<P><DT>.define <EM>symbol</EM> = <EM>expression</EM>
+<DD>Evaluates the expression and stores the result in symbol.
+Note that you must use '=' to evaluate an expression.  Otherwise
+the expression is considered as a string and stored as-is in the
+symbol.  Htmlpp passes the expression to Perl for evaluation, so
+you can use any valid Perl syntax.  If you want your htmlpp files
+to be portable to (future) non-Perl implementations of htmlpp,
+restrict the expressions to simple arithmetic (+, -, *, /, and
+parentheses).  This is an example:
+<PRE>.define count = 1
+.echo $(count)
+.define count = $(count) + 1
+.echo $(count)
+</PRE>
+Of course it helps to know that htmlpp will evaluate all
+variables before passing the expression to Perl to work out.
+So, the second .define is evaluated as '1 + 1'.  If you decide
+to rely on Perl (a good bet for now), you can use the
+<B>.define =</B> command to execute shell commands, e.g.:
+<PRE>.if $(PASS)
+.  define junk = system "rm *.htm";
+.endif
+</PRE>
+If you append .xx to the symbol name, where xx is a two-characters
+language code, you can afterwards use the variable as $(symbol) without
+writting the language code, provided $(USE_LANG)=1 and $(LANG)=xx.
+You should use standardized ISO-639 <A href="http://www.oasis-open.org/cover/iso639a.html">language codes</A>.
+You can define <A href="develop.html#db_symbols">database symbols</A> of the form
+<EM>database_code</EM>#<EM>entry_ID</EM>#<EM>field_name</EM> provided you
+previously used the .savedb command. All database symbols defined in this way
+will be stored in the database. If you add/redefine with a different value a
+database symbol which is used in other htmlpp documents, htmlpp will also
+process all those 'connected' documents when the -connect command-line
+option is activated.
+
+<P><DT>.define <EM>symbol++</EM> <EM>initial_value</EM>
+<DD>Creates or re-initialises a counter with the initial value.
+Each time you use the counter symbol, it is incremented.  The
+$(INC) symbol is actually defined internally like this:
+<PRE>.define INC++ ""</PRE>
+Note that the empty string is treated as zero; the next time
+the symbol will be '1'.  You can also use '--' after the symbol
+name to subtract one from its value each time it is used.  You
+can stick the '++' or '--' before the symbol name: then the
+symbol is incremented or decremented <EM>before</EM> its value
+is taken.<BR>
+The .define statement is resolved as late as possible: if the
+statement refers to other variables, these are inserted when
+the .define'd variable is used, rather than when it is defined.
+For instance if you refer to a .define'd variable in the page
+header, it will be re-evaulated each time the page header is
+output.
+</DL>
+
+<H3><A name="macro_command">The .macro Command</A></H3>
+<DL>
+<DT>.macro [-nosplit|-noquote] <EM>name</EM> <EM>macro-body</EM>
+<DD>Defines or redefines a macro. The macro body can go over several lines,
+either continuing each line with '-' or using the .endmacro optional
+command which is turned on by defining the flag 1 to 1.
+When htmlpp outputs a macro, it
+replaces arguments in the body with values you supply at the time. The
+arguments are $1, $2, and upwards and $*, which work as follows: $1 to $n
+are the first to n'th argument you supply; $* is the whole string of
+arguments. If the macro body is "", the macro is given an empty body.
+Otherwise, any quotes you use will be included in the macro body as-is. If
+you use the -nosplit option before the macro name, the macro will only ever
+have one argument, $1. Without this option, macro arguments are split on
+whitespace, with quotes and apostrophes being used to group arguments. See
+the section on <A href="stable.html#macros">Htmlpp Macro Processing</A> for details. The -noquote option automatically
+escapes quotes in the macro arguments.
+</DL>
+
+<H3><A name="endmacro_command">The .endmacro Command</A></H3>
+<DL>
+<DT>.endmacro
+<DD>End the previous .macro.  You can end a .macro with an
+.endmacro or a further .macro command. This command is new in version
+4.2b and is disactivated by default (when disactivated you must continue
+lines in the macro body with a trailing hyphen) not to break old code.
+But take into account that .endmacro will be the default in future releases.
+To turn it on, define standard symbol 1 to 1.
+</DL>
+
+<H3><A name="include_command">The .include Command</A></H3>
+<DL>
+<DT>.include [-ifexist] <EM>filename</EM>
+<DD>Start reading from the specified file.  You can nest .include
+files as much as you like.  Htmlpp checks for circular references.
+If the same file was already included earlier, htmlpp ignores the
+command, like the Perl 'require' operator.  Htmlpp searches along
+the LIBPATH environment variable for the file. If you specify a
+filename with a full path, htmlpp won't search the LIBPATH.  If
+htmlpp can't find the document using LIBPATH, it'll search PATH too.
+If the file is not found, Htmlpp will die unless the -ifexist
+option is used. Using -ifexist makes Htmlpp show a warning that the file
+is not found and continue processing.
+
+<P><DT>.include [-ifexist] <EM>filename</EM>!
+<DD>Include the file in any case, like a C #include directive.
+If the file is not found, Htmlpp will die unless the -ifexist
+option is used. Using -ifexist makes Htmlpp show a warning that the file
+is not found and continue processing.
+
+<P><DT>.include <EM>`command`</EM>
+<DD>Execute 'command' and include the output of the command in the
+generated HTML text.  The command can be any program with
+arguments; it should respect any operating system conventions or
+limitations.  The output text can contain htmlpp symbols in the
+normal manner.  It cannot contain htmlpp commands.
+</DL>
+
+<H3><A name="page_command">The .page Command</A></H3>
+<DL>
+<DT>.page <EM>filename</EM> = []<EM>title</EM>[]
+<DD>Start writing a new HTML file.  The title is required.  At any
+point after the .page, you can refer to $(PAGE) and $(TITLE) for
+the current file name and title.  For instance, you'll often see
+this:
+<PRE><EM>&lt;H1&gt;</EM>$(TITLE)<EM>&lt;/H1&gt;</EM></PRE>
+
+<P><DT>.page []<EM>title</EM>[]
+<DD>Equivalent to .page $(BASE)$(INC).$(EXT) =
+"<EM>title</EM>".  Just easier.
+</DL>
+
+<H3><A name="pipe_command">The .pipe Command</A></H3>
+<DL>
+<DT>.pipe <EM>filename</EM>=<EM>title</EM>
+<DD>Tells htmlpp to create a secondary file, as specified, and to send
+output there as well as to the primary file specified by the last .page
+command.  The .pipe command is useful when you want to send part of a HTML
+page into another file, for instance to generate a small readme.htm file for
+an installation.  The piped file is prefixed by the PIPE_HEADER block and
+ended with the PIPE_FOOTER block, if these are defined.
+</DL>
+
+<H3><A name="expires_command">The .expires Command</A></H3>
+<DL>
+<DT>.expires on <EM>date</EM>
+<DD>Defines the content of the current document to expire on date <EM>date</EM>
+(in YYYYMMDD format). If you invoke htmlpp with the -expired command-line
+option in that date or later (provided you didn't already processed the document
+after <EM>date</EM> by hand) the document will be automatically processed.
+If you use several '.expires on' commands in your document, only the closest
+date in time will be saved.<P>
+Htmlpp stores all .expires definitions in file expires.def.
+It is strongly recommended that you don't edit this file by hand.
+A backup copy of the file with extension '.bak' is created whenever it is
+modified if standard symbol $(BACKUP) is set to 1 (the default in debug mode).
+You can mix all the types of .expires command in your
+document. All criteria are stored, and the document will be reprocessed when
+you use the -expired switch if <EM>any</EM> of the criteria holds.
+You can use the Unix <CODE>cron</CODE> utility (or a similar one in other
+platforms) to call htmlpp with the -expired switch every day/week/... so as to
+always have your site updated.
+
+<P><DT>.expires after-days <EM>days</EM>
+<DD>Defines the content of the current document to expire after <EM>days</EM>
+days since it was last processed.
+If you invoke htmlpp with the -expired command-line after that number of days
+or later the document will be automatically processed.
+If you use several '.expires after-days' commands in your document, only the
+smallest <EM>days</EM> will be saved.
+
+<P><DT>.expires every-week-day <EM>day_of_the_week</EM>, ...
+<DD>Defines the content of the current document to expire every
+<EM>day_of_the_week</EM>. <EM>day_of_the_week</EM> can take the values "monday",
+"tuesday", ..., "sunday". You can define several days of the week separating
+them by commas.
+If you invoke htmlpp with the -expired command-line after that day of the week
+or later (provided you didn't already do it by hand) the document will be
+automatically processed.
+If you use several '.expires every-week-day' commands in your document, only
+the last one will be saved.
+
+<P><DT>.expires every-month-day <EM>day_of_the_month</EM>|LAST, ...
+<DD>Defines the content of the current document to expire every
+<EM>day_of_the_month</EM>. <EM>day_of_the_month</EM> can take values between
+1 and 31 or "LAST" for the last day of each month.
+You can define several days of the month separating them by commas.
+If you invoke htmlpp with the -expired command-line after that day of the month
+or later (provided you didn't already do it by hand) the document will be
+automatically processed.
+If you use several '.expires every-month-day' commands in your document, only
+the last one will be saved.
+
+<P><DT>.expires every-month <EM>month</EM>, ...
+<DD>Defines the content of the current document to expire every
+<EM>month</EM>. <EM>month</EM> can take values between 1 and 12.
+You can define several months separating them by commas.
+If you invoke htmlpp with the -expired command-line after the first day of the
+supplied month or later (provided you didn't already do it by hand) the document
+will be automatically processed.
+If you use several '.expires every-month' commands in your document, only
+the last one will be saved.
+</DL>
+
+<H3><A name="ignore_command">The .ignore Command</A></H3>
+<DL>
+<DT>.ignore header
+<DD>Ignore the next header line as far as the table of contents is
+concerned.  This is good for headers like &lt;H2&gt;Table of
+Contents&lt;/H2&gt;.
+
+<P><DT>.ignore header <EM>level</EM>
+<DD>Ignores all headers with level greater or equal to level.
+This is useful if a section has a lot of H3 and H4's that you
+don't want in the table of contents.  Use .ignore header 99 to re
+include all further headers.
+
+<P><DT>.ignore pages
+<DD>Ignore all .page commands except to pick-up the page titles.
+Use this when you want to create a super-document.  When you use
+.ignore pages, htmlpp also ignores the .build toc and .build index
+commands. So, if you want a table of contents, do the .build toc
+before you say .ignore pages.  You can also use .if commands to
+skip blocks of text under certain conditions.
+
+<P><DT>.ignore page
+<DD>Ignore next .page command for any future .build index command.
+This is the right way of keeping the index page itself out of the
+index.  Note that the index page does take part in the general
+page-to-page linking scheme provided by $(PREV_PAGE) and such.
+</DL>
+
+<H3><A name="if_command">The .if Command</A></H3>
+<DL>
+<DT>.if <EM>expression</EM><BR>[.else]<BR>.endif
+<DD>If the expression returns a false value, htmlpp skips until
+the .else or .endif line.  You can nest .if blocks.  An .else is
+always part of the closest preceding .if.  Htmlpp passes the
+expression to Perl for evaluation, so you can use any valid Perl
+syntax.  If you want your htmlpp files to be portable to (future)
+non-Perl implementations of htmlpp, restrict your expressions to
+simple arithmetic and logical tests (&lt;, &gt;, =, etc.).
+Otherwise, enjoy Perl's vast range of tests.  This is quite okay:
+<PRE>.if -f myfile.htm</PRE>
+An .if block must be entirely in one line.
+<DD>These are some examples of .if expressions:
+<PRE>.if $(number) == 0</PRE>
+<PRE>.if $(number) != 1</PRE>
+<PRE>.if $(number) > 2</PRE>
+<PRE>.if $(string) eq "value"</PRE>
+<PRE>.if $(string) ne "value"</PRE>
+</DL>
+
+<H3><A name="block_command">The .block Command</A></H3>
+<DL>
+<DT>.block <EM>blockname</EM>
+<DD>Define a piece of HTML text to be output as part of a .build
+command.  You can end the .block with an .endblock or another
+.block.  Htmlpp knows about these block names:
+<DL>
+<DT>header
+<DD>Output at the start of each new HTML page; i.e. whenever you
+use a .page command.
+
+<DT>footer
+<DD>Output at the end of each HTML page.
+
+<DT>toc_open
+<DD>Output at the start of a .build toc block (see below), and
+whenever htmlpp decides to indent a new level.
+
+<DT>toc_entry
+<DD>Output for each entry in the table of contents.  Use these
+symbols: $(TOC_HREF) - the local URL for the file and section;
+$(TOC_TITLE) - the title for the section, taken from the header
+line; $(TOC_LEVEL) - the table-of-contents level, 1 and higher.
+<DT>toc_close
+<DD>Output whenever htmlpp decides to outdent a level, and at the
+end of the table of contents.
+
+<DT>dir_open
+<DD>Output at the start of a .build dir block (see below).
+
+<DT>dir_entry
+<DD>Output for each entry in a .build dir block.  Use these
+symbols: $(DIR_HREF) - URL for the file; $(DIR_NAME) - the
+filename, left-justified; $(DIR_EXT) - the file extension, always
+put into lowercase; $(DIR_SIZE) - the file size, right-justified;
+$(DIR_DATE) - the file date; $(DIR_TIME) - the file time.  You can
+also use $(DIR_SIZEK) and $(DIR_SIZEM) to get the file size in
+Kbytes and Mbytes, and $(DIR_HREFL) to get the URL for the file in
+lowercase.
+
+<DT>dir_close
+<DD>Output at the end of a .build dir block.
+
+<DT>index_open
+<DD>Output at the start of a .build index block (see below).
+
+<DT>index_entry
+<DD>Output for each entry in a .build index block.  Use these
+symbols: $(INDEX_PAGE) - the filename; $(INDEX_TITLE) - the file
+title.  For compatability with earlier versions, htmlpp also
+accepts the name 'index'.
+
+<DT>index_close
+<DD>Output at the end of a .build index block.
+
+<DT>for_open
+<DD>Output at the start of any of the following .for commands, displayed
+<EM>only</EM> if the loop returns at least one row:
+<PRE>   .for <EM>name</EM> in `<EM>command</EM>`
+   .for <EM>name</EM> in @<EM>filename</EM>
+   .for <EM>name</EM> in %<EM>filename</EM> [...]</PRE>
+Use the $(HITS) symbol for the number of rows the loop returns.
+This block clears after it is used, so you have to define it before each .for
+loop.
+
+<DT>for_close
+<DD>Output at the end of any of the following .for commands, displayed
+<EM>only</EM> if the loop returns at least one row:
+<PRE>   .for <EM>name</EM> in `<EM>command</EM>`
+   .for <EM>name</EM> in @<EM>filename</EM>
+   .for <EM>name</EM> in %<EM>filename</EM> [...]</PRE>
+Use the $(HITS) symbol for the number of rows the loop returns.
+This block clears after it is used, so you have to define it before each .for
+loop.
+
+<DT>anchor
+<DD>Output whenever you use a .build anchor.  Use this symbol:
+$(ANCHOR) - name of anchor.
+</DL>
+
+<P>Any other block is treated as a user-defined block and can be
+output at any point using a matching .build command.
+
+<P><DT>.block <EM>blockname</EM> local
+<DD>You can follow the .block command by the keyword
+<TT><B>local</B></TT> - this defines a block that will be used
+one time only.  The <TT>local</TT> keyword applies to header,
+footer, and anchor blocks.  Local blocks are used to change the
+way a single page looks, without disturbing the headers and footers
+of the whole document.  Typically, you would define a general
+document header at the start of the document, then a local header
+and footer for a specific .page.  Note that you should define the
+local page footer after the .page command.  If you define a
+local footer block before the first page, htmlpp handles this
+correctly.
+</DL>
+
+<H3><A name="endblock_command">The .endblock Command</A></H3>
+<DL>
+<DT>.endblock
+<DD>End the previous .block.  You can end a .block with an
+.endblock or a further .block command. Any other command within
+a .block is interpreted when the block has been generated.
+</DL>
+
+<H3><A name="build_command">The .build Command</A></H3>
+<DL>
+<DT>.build toc
+<DD>Build table of contents for document.  Htmlpp scans the
+document and all include files once to collect titles
+(&lt;Hn&gt;...&lt;/Hn&gt;) and once to create the HTML pages.
+Titles (&lt;Hn&gt;...&lt;/Hn&gt;) must be entirely on a single
+line, or htmlpp will not find them.  You can manage the contents
+of the table of contents through the .ignore header command. You
+will normally use a .build toc at the start of a document.
+
+<P><DT>.build dir <EM>directory</EM> [<EM>filespec</EM>...]
+<DD>Build directory listing as specified.  The .build dir command
+only works if you mirror the server directory on some local disk
+that htmlpp can access.  This is a Good Idea in any case.  Before
+you can use .build dir you must define LOCAL and SERVER.  I define
+these like this:
+<PRE>.define LOCAL   i:/site:
+.define SERVER  http://www.imatix.com</PRE>
+
+The directory must be relative to either of these two.  It should
+start with '/' but not end with '/'.  You can specify zero or more
+filenames or wildcards (htmlpp accepts * and ?, according to UNIX
+rules).  If you specify no filespecs, htmlpp assumes you mean '*'.
+The filespecs can include PERL regular expressions: place the
+filespec between double quotes, e.g. to match all files with 'doc'
+or 'txt' somewhere in the name: .build dir /pub "doc|txt".  An
+example might help:
+<PRE>.define .txt   Text file
+.define .htm   HTML document
+.define .zip   ZIP archive
+.block dir_open
+&lt;PRE&gt;
+.block dir_entry
+$(*DIR_HREF="$(DIR_NAME)") $(DIR_SIZE)  $($(DIR_EXT))
+.block dir_close
+&lt;/PRE&gt;
+.endblock</PRE>
+
+Note the sneaky double-derefencing of $(DIR_EXT) which translates
+the file extension into a comment like 'Text file'.  I usually
+stick all such .defines in a separate .include file,
+filetype.def.
+
+<P><DT>.build index
+<DD>Build file index for document.  This is basically a list of
+all pages in the document with their titles.  If you use this,
+you may want to put an .ignore page before the .page that starts
+the index page.  It may be useful to do a .build index inside the
+footer of a page -- this is quite okay.
+
+<P><DT>.build anchor <EM>anchor-name</EM>[=title]
+<DD>Build an anchor definition.  This is useful.  Basically
+you do a '.build anchor somename' in a document, then do a
+$(*somename) or $(*somename="label") anywhere in any other
+document.  Htmlpp saves anchor symbols in the file anchor.def;
+otherwise anchor symbols are treated much like normal .define'd
+symbols.  One difference: anchor symbols and normal symbols do not
+share the same namespace; if you .define a symbol with the same
+name as the anchor symbol, the .define'd symbol takes precedence.
+If you undefine the symbol, the anchor symbol reappears by magic.
+This may or may not be useful, but it is the way it works.  If you
+change the file structure of your document, run everything through
+htmlpp *TWICE*, so that all anchor references can get really
+solidly updated.  You can delete the anchor.def file at any time;
+it is just kept to save some context between runs.  When you use
+the form $(*somename) to refer to an anchor, htmlpp will insert
+the anchor title as the label.
+
+<P><DT>.build [-ifdef] <EM>user_block_name</EM>
+<DD>Output the user-defined block specified.  This is any amount
+of text that you do not want to specifically put into a separate
+file for use with the .include command.  You define the block
+using the .block command.
+If the block has not been defined, Htmlpp will die unless the -ifdef
+option is used. Using -ifdef makes Htmlpp show a warning that the block
+is undefined and continue processing.
+</DL>
+
+<H3><A name="perl_command">The .perl Command</A></H3>
+<DL>
+<DT>.perl <BR>[Perl program fragment]<BR>.endperl
+<DD>Replaces the text between .perl and .endperl by the output of the specified
+Perl code. The Perl code is executed using the eval command -- see your Perl
+documentation if you want to use this feature: you shouldn't touch what's
+internal to htmlpp, try to use your own name space, etc.
+Symbols are expanded before Perl evaluation.
+
+<P><DT>.perl <EM>intrinsic_function_name</EM><BR>[Perl program fragment] <BR>.endperl
+<DD>Defines a new htmlpp intrinsic function. You can redefine existing intrinsic
+functions, but htmlpp will issue a warning. No htmlpp symbol expansion is
+performed on the code (all variables should be passed as arguments).
+</DL>
+
+<H3><A name="echo_command">The .echo Command</A></H3>
+<DL>
+<DT>.echo [-] <EM>text</EM>
+<DD>Echoes the text to the console.  Strips-off any leading and
+trailing spaces, but you can enclose the text in single or double
+quotes if you want leading/trailing spaces.  Unless you place a
+hyphen before the text, htmlpp adds a newline.
+</DL>
+
+<H3><A name="for_command">The .for Command</A></H3>
+<DL>
+<DT>.for <EM>name</EM> in <EM>item</EM>...<BR>.endfor
+<DD>Repeats the text between .for and .endfor, where $(name) has
+the value of each item in the list.  The item list is separated
+by spaces.
+
+<P><DT>.for <EM>name</EM> in `<EM>command</EM>`
+<DD>Repeats the text between .for and .endfor, where $(name) has
+the value of each line in the output generated by the command.
+The special variables $(1), $(2), and so on will hold each word
+in the line, and the variable $(HITS) the total number of lines.
+You can use blocks for_open and for_close if it is possible that the
+command returns no lines.
+
+<P><DT>.for <EM>name</EM> in @<EM>filename</EM>
+<DD>Repeats the text between .for and .endfor, where $(name) has
+the value of each line in the specified file.  The special variables
+$(1), $(2), and so on will hold each word in the line, and the variable
+$(HITS) the total number of lines.
+You can use blocks for_open and for_close if it is possible that the
+command returns no lines.
+
+<A NAME="for_db">&nbsp;</A>
+<P><DT>.for <EM>name</EM> in %<EM>filename</EM> [<EM>sort_by</EM>] [<EM>sort_order</EM>] [<EM>exact_match</EM>] [<EM>case_sensitive</EM>] [<EM>criterion</EM> ...]
+<DD>Repeats the text between .for and .endfor, where $(name) has
+the value of each row which satisfies the given query in the specified
+flat-text database file <EM>filename</EM>.
+You can define the format of the database by redefining standard symbols
+$(DB_DELIM), $(DB_ESC_DELIM), $(DB_ESC_NL), $(DB_COMMENT) and
+$(DB_FIELDS).
+The special variables $(1), $(2), and so on will hold each field in the
+line. You can also access fields by their names if the database includes a
+row with the fields labels, using the special variable $(%<EM>name</EM>).
+The variable $(HITS) holds the number of rows resulting from the query.
+You can use standard blocks 'for_open' and 'for_close' if it is possible that
+the query returns no hits.
+<P>The rows will be sorted according to the values of the field
+number defined by <EM>sort_by</EM> (starting at 1).
+<EM>sort_order</EM> can take the values &quot;asc&quot; or &quot;desc&quot;
+that instruct htmlpp to sort the rows resulting from the query in ascending or
+descending order.
+If you leave <EM>sort_order</EM> empty, the default is ascending.
+
+<P>Each query <EM>criterion</EM> is defined by four pipe-delimited fields. You
+can use as many criteria as you want. Rows must satisfy <EM>all</EM> of the
+supplied criteria. The fields are the
+<OL>
+<LI>value to be matched
+<LI>index of field into the database that this criteria applies to (starting at
+1)
+<LI>operator for comparison
+	<DL><DT>Possible values: >,<,>=,<=,=,!= (not equal), reg
+  	(regular expression)
+	<DD>The operator is compared the following way:
+    <P><CODE>value OPERATOR database_field_value</CODE></P>
+ 	That is, (1) above is the left hand side of the
+	operator and (2) above is the right hand side of the operator,
+    unless the operator is &quot;reg&quot;, in which case the value to be
+    matched must be a valid Perl regular expression (you must escape all
+    backslashes with another backslash for it to work. For example, to match
+    an integer number you should use &quot;\\d+&quot;).
+</DL>
+<LI>data type of the field (this determines how the operator in (3) gets
+applied to the data. It is irrelevant if the operator is &quot;reg&quot;)
+    <DL><DT>The data type can be: <CODE>date</CODE>, <CODE>number</CODE>, or
+	<CODE>string</CODE>
+	<DD>If the data type is a date, then the operator
+	for comparison is done after the value to be matched.
+	Note that dates must be in <EM>YYYYMMDD</EM> format.<BR>
+	If the data type is a number, then the operator
+	for comparison is done based off of numerical
+	if operators (>,<,==, etc.)<BR>
+	If the data type is a string, then the operator
+	for comparison is done based off of string
+	if operators (gt, lt, eq, ne, etc.) with ONE
+	EXCEPTION.<BR>
+	If the datatype is a STRING *AND* the operator
+	is =, then the search that is done becomes a
+	more flexible search:
+    <UL>
+		<LI>All the words in the form variable are split
+                apart and searched as separate keywords in the
+                text of the fields.
+		<LI> By default, the search on string = string
+                is a pattern match search and is not case
+                sensitive.
+		<LI> If you want this special string,= combination
+                searching to be case sensitive and to match on
+                whole words only, you MUST set <EM>case_sensitive</EM>
+                and <EM>exact_match</EM> to <CODE>on</CODE><BR>
+              If <EM>exact_match</EM> is on then the
+                combination of string,= in the query criteria
+                array will match on WHOLE WORDS only.<BR>
+              If <EM>case_sensitive</EM> is on then the
+                combination of string,= in the query criteria
+                array must have matching case values (upper/lower).
+    </UL></DL>
+</OL>
+<DL>
+<DT><EM>Examples:</EM>
+<DD><UL>
+<LI><CODE>&quot;20|9|<=|number&quot; &quot;40|9|>=|number&quot;</CODE>:
+return all rows in the database whose field number 9 value is between 20 and 40.
+<LI><CODE>&quot;hello world|1,2,3,4,5|=|string&quot;</CODE>:
+return all rows in the database that contain the words &quot;hello&quot;
+<EM>and</EM> &quot;world&quot;
+(in that order if <EM>exact_match</EM> is set to on, otherwise in any order)
+in any of the fields from 1 to 5.
+<LI><CODE>&quot;^.+\\.en$|1|reg|string&quot;</CODE>:
+return all rows in the database whose first field contains a string that
+ends up with extension &quot;.en&quot; (this can be a language symbol).
+</UL>
+<DT><EM>Suggestions:</EM>
+<DD><UL>
+<LI>You can use this .for command to access sorted series of database symbols
+in order to produce site-wide tables of contents, &quot;what's new in this
+site&quot; pages, and so on.
+<LI>You can use some of the free tools in Internet to generate flat-text
+databases with and HTML interface, so that even other people can fill the
+data and your pages will be generated using those data. See for example
+<A href="http://www.extropia.com/products.html">Selena Sol's Database Manager</A>.
+<LI>By combining the -set command-line option with this .for loop you can
+automate mass-production of similar pages from a single htmlpp document.<BR>
+Imagine you want to make a page for each of the employees in your company.
+The employees themselves can fill their data through the web with some of
+the tools mentioned above. You make a htmlpp document with something like:
+<PRE>.for row in %staff.db "2" "asc" "on" "on" "$(person)|1|=|string"
+.page "$(5)" = "$(2) $(3)'s Homepage"
+&lt;UL&gt;
+    &lt;LI&gt;E-mail: &lt;A href="mailto:$(4)"&gt;$(4)&lt;/A&gt;
+    &lt;LI&gt;Office: $(5)
+[...]
+.endfor</PRE>
+Then calling 'htmlpp -set person=<EM>personcode</EM> <EM>template_file</EM>'
+for each person will produce his/her personal page.<BR>
+Htmlpp will be clever and consider as different the same document processed
+with different values of the person variable when using connections and when
+verifying expired documents, if you use '.connect symbol person' in the
+document.
+</UL></DL>
+
+<P><DT>.for <EM>name</EM> from <EM>start</EM> to <EM>end</EM>
+<DD>Repeats the text between .for and .endfor, where $(name) has
+a numeric value from <EM>start</EM> to <EM>end</EM> inclusive.
+Htmlpp will count up or down as necessary.
+</DL>
+
+<H3><A name="loaddb_command">The .loaddb Command</A></H3>
+<DL>
+<DT>.loaddb <EM>database_code</EM> <EM>database_path</EM> [<EM>exact_match</EM>] [<EM>case_sensitive</EM>] [<EM>query_criterion</EM>]...
+<DD>Loads the flat-text database from file <EM>database_path</EM>.
+If you define one or more <EM>query_criterion</EM> only the entries satisfying
+the query will be loaded. See the <A href="develop.html#for_db">.for</A> command to query
+flat-text databases for details on how to specify the query criteria,
+and the section on <A href="develop.html#db_symbols">database symbols</A> for details about the
+structure flat-text databases must have.<BR>
+You can access database symbols after a .loaddb command through
+<PRE>$(database_code#entry_ID#field_name)
+$(*database_code#entry_ID#field_name)
+$(*database_code#entry_ID#field_name="label")
+ ...</PRE>
+where <EM>entry_ID</EM> is the value that identifies uniquely the database
+entry, and <EM>field_name</EM> is any of the fields in that entry.
+You can simplify the way of accessing database symbols using the .defaultdb
+command.<BR>
+Unless the no-connect mode is activated, all database symbols used in the
+document will be stored of file 'connect.def'. This file will be used to
+reprocess the document whenever other document modifies the values of those
+database symbols, if the connect mode is turned on.
+</DL>
+
+<H3><A name="savedb_command">The .savedb Command</A></H3>
+<DL>
+<DT>.savedb <EM>database_code</EM> <EM>database_path</EM>
+<DD>Allows to define database symbols that will be stored on file
+<EM>database_path</EM>. If by defining a database symbol you modify its
+previous value, all documents which use the database symbol will be
+automatically processed if the connect mode is activated. If the connect mode
+is turned off, htmlpp will issue a warning telling you to reprocess those
+'connected' documents, what you should do if you don't want to have
+outdated information in your site.
+</DL>
+
+<H3><A name="defaultdb_command">The .defaultdb Command</A></H3>
+<DL>
+<DT>.defaultdb <EM>database_code</EM> [<EM>field_name</EM>]
+<DD>Simplifies the use of database symbols. If the only argument is
+<EM>database_code</EM>, whenever you define/use a database symbol without
+specifying the database code, <EM>database_code</EM> will be used.
+For example:
+<PRE>.defaultdb pages
+$(#home#url)</PRE>
+is the same as
+<PRE>$(pages#home#url)</PRE>
+If you define both arguments, whenever you define/use a database symbol
+from <EM>database_code</EM> without specifying the field name,
+<EM>field_name</EM> will be used. For example:
+<PRE>.defaultdb pages url
+$(pages#home#)</PRE>
+is the same as
+<PRE>$(pages#home#url)</PRE>
+You can combine both types:
+<PRE>.defaultdb pages
+.defaultdb pages url
+$(#home#)</PRE>
+is the same as
+<PRE>$(pages#home#url)</PRE>
+</DL>
+
+<H3><A name="connect_command">The .connect Command</A></H3>
+<DL>
+<DT>.connect symbol <EM>name</EM>
+<DD>Defines symbol <EM>name</EM> as a symbol whose value modifies crucially
+the HTML output from current document, so that different values of the symbol
+produce different HTML pages which use different database symbols.
+These symbols are tipically set with the -set command-line option.
+For example, the
+value of $(LANG) may produce output files in several languages.
+These symbols are used for connecting documents. If you use this command,
+htmlpp will consider as different the same document processed with different
+values of the symbol when storing connections in
+file 'connect.def' and when storing expire definitions in file 'expires.def',
+and will preset the value of the symbol when automatically processing the
+documents.
+</DL>
+
+<A NAME="macros">&nbsp;</A>
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC79">Htmlpp Macro Processing</A></H2></FONT>
+
+<P>Macros are a shorthand way to produce HTML tags and other
+constructs.  This is how I define a macro 'H3':
+<PRE>.macro H3 &lt;H3&gt;$*&lt;/H3&gt;</PRE>
+<P>I use all uppercase names for macros, but this is just a
+convention, since the case is not important.  We can use a macro
+like H3 in three ways:
+<PRE>.H2 some text</PRE>
+<P>or
+<PRE>&lt;!--.H2 some text--&gt;</PRE>
+<P>or
+<PRE>&lt;.H2 some text&gt;</PRE>
+<P>The first form is good for titles and other constructs that
+come naturally on a line by themselves.  Since it uses a syntax
+similar to htmlpp commands, there is a certain danger that a
+macro will conflict with some future command.  This is just too
+bad; the alternative of inventing yet another syntax for macros
+was (for me) a worse choice.  In any case, htmlpp will warn you
+if you try to define a macro that already exists as a command.
+The second form is compatible with HTML editors and some other
+HTML preprocessors, but is frankly a pain to type. The third
+form is good for mark-up tags.  The second and third forms
+suffer from one problem: the whole thing has to come on a single
+line.
+
+<P>When you use a macro like this: &lt;.H2 some text&gt; you are supplying
+<EM>arguments</EM>. Here we supply two, 'some' and 'text'. You can refer to
+these as $1 and $2 inside the macro definition, or together as $*. Htmlpp
+can handle quotes correctly, so &lt;.H2 "some text"&gt; only supplies one
+argument, $1.
+
+<P>The $+ symbol expands to anything left over after $1, $2, etc. For
+instance, if you refer to $1 and $3 in the macro body, $+ refers to $4 and
+any remaining arguments.
+
+<P>The $# symbol expands to the number of macro arguments.
+
+<P>You can define a macro with a section that repeats for each argument.
+This is useful if you don't know in advance how many arguments you are going
+to have. For instance, the standard .THEAD macro generates a table heading
+for one, two, three, or more columns. You specify the repeating section as
+{...$n...}. The text between '{' and '}' is repeated for each argument; "$n"
+(dollar sign, small 'n') is replaced by the argument value.
+
+<P>To use multi-word arguments, enclose them in quotes.
+
+<P>When a macro refers to a variable using $(xxx), this will be
+expanded as soon as the macro is expanded.  Usually this is what
+you expect, but sometimes you need the variable to be expanded in
+the <EM>next</EM> pass, for instance if you generate the .define
+in the same pass.  In this case, escape the variable: $\(xxx).
+
+<P>The file macro.def that comes with htmlpp defines a set of
+standard macros.  You can define multiline macros that include
+other commands, like .if and .include.
+
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC80">Multilingual support</A></H2></FONT>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC81">Support For Accented Characters</A></H3></FONT>
+
+You can type accented characters directly, and htmlpp will do
+its best to convert these into HTML metacharacters.  For instance,
+if your document contains an e-circumflex, htmlpp will replace it
+by the metacharacter &amp;ecirc;.
+
+<P>Supported character sets are ISO-8859-1 and MS-DOS (codepage 850).
+In general you can use ISO-8859-1 both for Unix Latin-1 and Windows 1250.
+You can define the character set through the -charset command-line option
+or let htmlpp do a
+little testing of the wind to figure-out if it's running under a
+Unix or a DOS system (Windows testing not supported).
+If you use htmlpp on a Mac, or on documents
+encoded using another character set it won't
+work.  Basically htmlpp handles MS-DOS accents if there is an
+environment variable 'COMPSPEC' defined, and ISO-8859-1 accents if there
+is a file called "/etc/passwd" on the system.
+
+<P>If you use any character which is not
+on ISO-8859-1 or MS-DOS CP850 you will find that it comes-out
+as '?' (not found). If you have the HTML metachar for the character
+(which must be a Unicode numeric reference rather than an entity reference
+if it is outside ISO-8859-1) and the octal ASCII code for the character
+set you are using, please send it to me.
+
+<FONT color="#000080" face="arial"><H3><A NAME="TOC82">Dates Formatting</A></H3></FONT>
+Days of the week and month names in date formatting functions can be written
+in several languages. Current supported
+languages are "es" for Spanish, "da" for Danish, and "fr" for French.
+If no language is specified in the formatting function the value of
+standard symbol $(LANG) is used, which is "en" by default if it has not
+been redefined.
+
+<FONT color="#000080" face="arial"><H3><A NAME="TOC83">Multilingual Variables</A></H3></FONT>
+Htmlpp allows you to add two-character "extensions" to symbols to
+denote the language for the symbol value. This way you don't have to
+remember different symbol names for each alternative language you offer
+in your site. When you use the symbol you don't have to specify the language
+if it coincides with the current value of $(LANG). This feature only works
+when you activate the multiligual variable search option by defining
+$(USE_LANG) to 1. You can also use multilingual search with database symbols
+both for the database entry ID and the field name.
+<DL><DT><EM>Example:</EM>
+<DD><PRE>.define USE_LANG 1
+.define home.en  "http://www.myserver.com/english/index.html"
+.define home.es  "http://www.myserver.com/spanish/index.html"
+.define home.fr  "http://www.myserver.com/french/index.html"</PRE>
+Now if you use the symbol $(home), htmlpp will
+<OL>
+<LI>Look for variable $(home).
+<LI>Because $(home) does not exist, look for $(home.$(LANG)).
+</OL>
+<P>If you want to make a link to a variable which is in a different language
+than the current one in $(LANG) you can use the full symbol name and Htmlpp
+will add for you the 'hreflang=xx' attribute:
+<PRE>.define $(LANG)  es
+$(*home=Home) --&gt;
+     &lt;A href="http://www.myserver.com/spanish/index.html"&gt;Home&lt;/A&gt;
+$(*home.es=Home) --&gt;
+     &lt;A href="http://www.myserver.com/spanish/index.html"&gt;Home&lt;/A&gt;
+$(*home.en=Home) --&gt;
+     &lt;A href="http://www.myserver.com/english/index.html"
+     hreflang=en&gt;Home&lt;/A&gt;
+</PRE>
+</DL>
+
+<FONT color="#000080" face="arial"><H3><A NAME="TOC84">Generating Several Language Versions from a Single Source File</A></H3></FONT>
+<P>You can use the following trick. Write your source file as:
+<PRE>
+.if ("$(LANG)" eq "en")
+
+  [... version in english ...]
+
+.endif
+.if ("$(LANG)" eq "es")
+
+  [... version in spanish ...]
+
+.endif
+.if ("$(LANG)" eq "fr")
+
+  [... version in french ...]
+
+.endif
+</PRE>
+Then to process each language invoke htmlpp as 'htmlpp -set LANG=xx filename'.
+You can also write a simple shell script to process the three languages at
+once by calling three times to Htmlpp.
+
+<P>Note that you must use '.connect symbol LANG' in the document for
+htmlpp to be clever and consider as different the same document processed
+with different values of the variable $(LANG). This is important both when
+using connections between documents and when verifying expired documents.
+
+<A NAME="guru">&nbsp;</A>
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC85">Htmlpp Guru Mode</A></H2></FONT>
+
+<P>Recognising that a True Guru does not have time to painfully
+mark-up large HTML documents, htmlpp includes a basic text-to-HTML
+converter.  You can invoke this as a preprocessing phase to the
+normal htmlpp process.  Right now, this is an either-or choice; you
+either use htmlpp commands in a HTML document, or a text document
+and guru mode, but not a mixture of the two modes.  (Release 3.1 of
+htmlpp tried to make this work, but that did not last long :\ )
+
+<P>You can, usefully, use htmlpp's guru mode to mark-up a document,
+then fine-tune it by hand.
+
+<P>To use guru mode, run htmlpp with the '-guru' option:
+<PRE>htmlpp -guru <I>filename</I>
+</PRE>
+
+<P>Guru mode works by recognising layout, and converting this to HTML.
+I've tried to keep a balance between features and complexity, to give
+you something useful without becoming too formal (which is what HTML
+is for).  Basically, guru mode relies on layout rules that also help
+to make the text readable in any case.  For example, blank lines and
+indentation are significant in most places.  One consequence of this
+is that the plain text file is very readable even before it is HTML'd
+(assuming you do your bit to help things.)
+
+<P>In guru mode, htmlpp reads an input text file (with any name and
+extension except '.hpp') and creates an output file with the same name
+and the extension '.hpp'.   It then processes this file as it would
+any normal input file.  The '.hpp' file remains afterwards, so you can
+use it as the basis for further refinement if wanted.  (You should
+call it something else, to avoid embarrasing mistakes.)
+
+<FONT color="#000080" face="arial"><H3><A NAME="TOC86">Standard Guru Mode Definitions</A></H3></FONT>
+
+<P>The file 'guru.def' is always inserted at the start of the
+newly-created file.  You can modify this file as wanted, to tune the
+results of guru mode.  You cannot choose another name for this file
+other than by changing htmlpp's source code, which I don't recommend.
+
+<P>Htmlpp looks for a file called 'guru.fmt' which may exist and which
+may redefine the various HTML tags it uses.  A file 'guru_opt.fmt' is
+supplied in the htmlpp distribution; rename or copy this to 'guru.fmt'
+and change any values you want to (I'd suggest you remove anything that
+does not change, just to make things clear).  I've made it work in
+this way so that if you reinstall htmlpp, you don't loose your work.
+
+<FONT color="#000080" face="arial"><H3><A NAME="TOC87">Chapter and Section Headers</A></H3></FONT>
+<P>Htmlpp handles three levels of headers, H1, H2, and H3.  In the text
+these look like this:
+<PRE>Chapter Header
+**************
+
+Section Header
+==============
+
+Subsection Header
+-----------------
+</PRE>
+
+<P>The line following the header text must start with 3 or more
+asterisks, equals, or hyphens.  There is no way to specify H4 or
+other headers.  I recommend that you start the document with a
+chapter header.
+
+<P>You can also request a horizontal rule (&lt;HR&gt;) by putting
+four or more dots on a line by themselves:
+<PRE>....
+</PRE>
+
+<P>The header text line must come after a blank line, or at the start
+of the document.
+
+<FONT color="#000080" face="arial"><H3><A NAME="TOC88">Table of Contents</A></H3></FONT>
+<P>If your document contains at least two chapters, htmlpp will
+insert a table of contents before the second chapter header.  This
+works best if the first chapter is empty or contains a brief text
+to introduce the document.  Htmlpp inserts the table of contents
+by adding a section header called 'Table of Contents', and then
+a line '.include contents.def', in the normal manner.  You should
+not call the first chapter 'Table of Contents'.
+
+<FONT color="#000080" face="arial"><H3><A NAME="TOC89">Pagination</A></H3></FONT>
+<P>Htmlpp inserts a '.page' command before each chapter header.
+Therefore, use chapter headers wisely to break the document into
+usable pages.
+
+<FONT color="#000080" face="arial"><H3><A NAME="TOC90">Page Headers and Footers</A></H3></FONT>
+<P>The guru.def file normally includes 'prelude.def', which defines
+page headers and footers for the document.  You will normally tune
+these for any project -- the supplied files contain references to
+iMatix URLs that may not be appropriate for your work.  I like to
+use the same headers and footers (the same prelude.def) for all the
+files in a project, including those I that use guru mode.
+
+<FONT color="#000080" face="arial"><H3><A NAME="TOC91">Paragraphs</A></H3></FONT>
+<P>A paragraph is anything following a blank line that does not
+look like something else.  Basically, any plain text following a
+blank line is given a &lt;P&gt; tag.  Note however the exceptions
+that follow...
+
+<FONT color="#000080" face="arial"><H3><A NAME="TOC92">Preformatted Text</A></H3></FONT>
+<P>If a line is indented by 4 or more spaces, or a tab, htmlpp
+treats the line as 'preformatted' text and inserts a &lt;PRE&gt;
+tag.  You can mix blank lines with preformatted text.
+
+<FONT color="#000080" face="arial"><H3><A NAME="TOC93">Bulleted and Numbered Lists</A></H3></FONT>
+<P>A paragraph starting with a hyphen and a space is considered to
+be a bulleted list item.  A paragraph starting with a digit and a
+dot and optionally a space is considered to be a numbered list item.
+You can put blank lines between list items, but it's not necessary.
+Cosmetically, when list items are short, blank lines are disturbing.
+But when list items are several lines, blank lines make the text
+more readable.  Either way, htmlpp is happy.
+
+<FONT color="#000080" face="arial"><H3><A NAME="TOC94">Definition Lists</A></H3></FONT>
+<P>A definition list is a line ending in ':' followed by some lines
+indented by one or more spaces.  For example:
+<PRE>Definition:
+ Explanation of definition.
+</PRE>
+<P>You can put blank lines between definition items, but again, it's
+a matter of cosmetics.  There should be a blank line before the first
+definition item, however.
+
+<FONT color="#000080" face="arial"><H3><A NAME="TOC95">Tables</A></H3></FONT>
+<P>Tables are one of the real pains of HTML markup, in my opinion.
+Here htmlpp tries to solve the most common case; a two-column table
+consisting of a term or value in one column, and an explanation in
+the second column.
+
+<P>A table can start with a header, which is a line like this:
+<PRE>Some column:  Followed by some explanation:
+</PRE>
+
+<P>Here, the colons (':') are important.  Htmlpp also wants a capital
+letter at the start of both phrases, and a space after the first colon.
+The table header is optional; you can start immediately with table
+items.  Either way, htmlpp needs a blank line before the table.  A
+table item looks like this:
+<PRE>Some_word:    Followed by some explanation
+               which can come on several lines.
+</PRE>
+
+<P>The first column must be a single word - if you want several words,
+use underlines.  Htmlpp replaces these by spaces.  The explanation can
+come on several lines, which <EM>must</EM> be indented by one or more
+spaces.
+
+<FONT color="#000080" face="arial"><H3><A NAME="TOC96">Figures and Images</A></H3></FONT>
+<P>To insert a figure, use one of these conventions:
+<PRE>[Figure <EM>filename</EM>: caption]
+[Figure "<EM>filename</EM>": caption]
+</PRE>
+
+<P>Htmlpp inserts a figure caption, numbering the figures in a document
+from 1 upwards.  The caption is followed by an &lt;IMG&gt; tag to display
+the file. You can use a URI (a path) as the filename, or an URL (with a
+host name specifier); you must put an URL in quotes.  My preference is
+to put image files locally with the HTML files, and use a simple
+filename without a path.  This is just easier to manage and lets you
+put the HTML files plus images in any directory.  If htmlpp can find
+the image you specify, and it's a .GIF or .JPG file, it will insert
+the WIDTH= and HEIGHT= tags automatically.
+
+<P>To insert a plain image, omit the 'Figure' keyword.  For example,
+these are all examples of valid images:
+<PRE>[Figure somefile.gif: caption]
+[somefile.gif: caption]
+[Figure somefile.gif]
+[somefile.gif]
+</PRE>
+
+<FONT color="#000080" face="arial"><H3><A NAME="TOC97">Hyperlinks</A></H3></FONT>
+
+<P>If you use &lt;name@address&gt;, this is converted into a mailto:
+URL hyperlink.  If you use &lt;http://address/document&gt; -- or any
+other URL -- this is converted into a hyperlink as well.  You can follow the
+URL by ':description' if you like, e.g. &lt;http://www.imatix.com:iMatix
+Corporation's Site&gt;.  You can also refer to local files using the syntax
+&lt;/localfile[:description]&gt;.
+
+<P>Htmlpp does not presently allow links within the document or to
+other documents.
+
+<FONT color="#000080" face="arial"><H3><A NAME="TOC98">Special Characters</A></H3></FONT>
+
+<P>Since you're not typing HTML, htmlpp replaces &lt;, &gt; and &amp;
+by HTML metacharacters.  &lt; and &gt; are used to indicate hyperlinks.
+
+<A NAME="intrinsic">&nbsp;</A>
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC99">Htmlpp Intrinsic Functions</A></H2></FONT>
+
+<P>Htmlpp provides a number of intrinsic functions that you can
+use in your text.  The syntax for using an intrinsic function is:
+<PRE>&function-name(arguments)</PRE>
+
+<TABLE>
+<TR><TH>This function:              <TH>Does this:
+<TR><TD>&<A href="stable.html#date">The &date Function</A>("picture", date)     <TD>Format specified date using picture
+<TR><TD>&<A href="stable.html#date">The &date Function</A>("picture", date, lc) <TD>Format specified date using picture
+and language code.
+<TR><TD>&<A href="stable.html#date">The &date Function</A>("picture")          <TD>Format current date using picture
+<TR><TD>&<A href="stable.html#date">The &date Function</A>()                   <TD>Return current date value
+<TR><TD>&<A href="stable.html#time">The &time Function</A>()                   <TD>Format current time as hh:mm:ss
+<TR><TD>&<A href="stable.html#week_day">The &week_day Function</A>([date])         <TD>Get day of week, 0=Sunday, 6=Saturday
+<TR><TD>&<A href="stable.html#year_week">The &year_week Function</A>([date])        <TD>Get week of year, 1 is first full we
+<TR><TD>&<A href="stable.html#julian_date">The &julian_date Function</A>([date])      <TD>Get Julian date for date
+<TR><TD>&<A href="stable.html#lillian_date">The &lillian_date Function</A>([date])     <TD>Get Lillian date for date
+<TR><TD>&<A href="stable.html#date_to_days">The &date_to_days Function</A>(date)       <TD>Convert yyyymmdd to Lillian date
+<TR><TD>&<A href="stable.html#days_to_date">The &days_to_date Function</A>(days)       <TD>Convert Lillian date to yyyymmdd
+<TR><TD>&<A href="stable.html#future_date">The &future_date Function</A>(days,[date]) <TD>Calculate future date
+<TR><TD>&<A href="stable.html#past_date">The &past_date Function</A>(days,[date])   <TD>Calculate past date
+<TR><TD>&<A href="stable.html#date_diff">The &date_diff Function</A>(date1,date2)   <TD>Calculate differences between dates
+<TR><TD>&<A href="stable.html#image_height">The &image_height Function</A>("image.ext")<TD>Get image height (GIF, JPEG)
+<TR><TD>&<A href="stable.html#image_width">The &image_width Function</A>("image.ext") <TD>Get image width (GIF, JPEG)
+<TR><TD>&<A href="stable.html#file_size">The &file_size Function</A>("filename",arg)<TD>Get size of file: optional arg K or M
+<TR><TD>&<A href="stable.html#file_date">The &file_date Function</A>("filename")    <TD>Get date of file
+<TR><TD>&<A href="stable.html#file_time">The &file_time Function</A>("filename")    <TD>Get time of file as hh:mm:ss
+<TR><TD>&<A href="stable.html#normalise">The &normalise Function</A>("filename")    <TD>Normalise filename to UNIX format
+<TR><TD>&<A href="stable.html#system">The &system Function</A>("command")        <TD>Get result of some system utility
+<TR><TD>&<A href="stable.html#upper">The &upper Function</A>("string")          <TD>Convert string to uppercase text
+<TR><TD>&<A href="stable.html#lower">The &lower Function</A>("string")          <TD>Convert string to lowercase text
+<TR><TD>&<A href="stable.html#pageref">The &pageref Function</A>("page","title")  <TD>Build link for page index
+<TR><TD>&<A href="stable.html#relpath">The &relpath Function</A>(["from"],"to")   <TD>Get relative path from-&gt;to
+</TABLE>
+
+
+<A NAME="date">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC100">The &date Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&date(<I>picture</I>, <I>value</I>)
+&date(<I>picture</I>, <I>value</I>, <I>language</I>)
+&date(<I>picture</I>)
+&date()
+</PRE>
+
+<P>Without a picture, returns the current date. With a picture, formats the
+current date according to a picture that you specify. You can optionally
+supply a date value in the standard 8-digit format; YYYYMMDD (as returned by
+&date()), or use 0 to indicate today's date. You can optionally follow the
+picture and value by a language code; the values currently accepted are "es"
+for Spanish, "fr" for French, and "da" for Danish.
+Anything else is taken to mean English. If no language is specified, $(LANG)
+is used by default. The picture can consist of any mixture of these elements:
+<TABLE>
+<TR><TD>cc   <TD>century 2 digits, 01-99
+<TR><TD>y    <TD>day of year, 1-366
+<TR><TD>yy   <TD>year 2 digits, 00-99
+<TR><TD>yyyy <TD>year 4 digits, 100-9999
+<TR><TD>m    <TD>month, 1-12
+<TR><TD>mm   <TD>month, 01-12
+<TR><TD>mmm  <TD>month, 3 letters
+<TR><TD>mmmm <TD>month, full name
+<TR><TD>MMM  <TD>month, 3 letters, ucase
+<TR><TD>MMMM <TD>month, full name, ucase
+<TR><TD>d    <TD>day, 1-31
+<TR><TD>dd   <TD>day, 01-31
+<TR><TD>ddd  <TD>day of week, Sun-Sat
+<TR><TD>dddd <TD>day of week, Sunday-Saturday
+<TR><TD>DDD  <TD>day of week, SUN-SAT
+<TR><TD>DDDD <TD>day of week, SUNDAY-SATURDAY
+<TR><TD>w    <TD>day of week, 1-7 (1=Sunday)
+<TR><TD>ww   <TD>week of year, 1-53
+<TR><TD>q    <TD>year quarter, 1-4
+<TR><TD>\x   <TD>literal character x
+<TR><TD>other<TD>literal character
+</TABLE>
+
+<P>Examples:
+<PRE>
+.echo &date()             --> Nov 13, 99
+.echo &date('mm d, yy')   --> Dec 2, 98
+.echo &date('d mmm, yy')  --> 2 Dec, 98
+.echo &date("yymd")       --> 9812 2
+.echo &date("yyyymmdd")   --> 19981202
+.echo &date("d \de mmmm \de yyyy", 0, "es")  --> today's date in Spanish
+</PRE>
+
+<A NAME="time">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC101">The &time Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&time()
+</PRE>
+<P>Formats the current time in the same way as the $(TIME) symbol.
+The difference is that $(TIME) is set when htmlpp starts working;
+&time() reflects the current time.
+
+<A NAME="week_day">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC102">The &week_day Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&week_day()
+&week_day(<I>date</I>)
+</PRE>
+<P>Returns the day of the week for the specified date, or for the current
+date if no argument is given.  Day 0 is Sunday; day 6 is Saturday.
+
+<A NAME="year_week">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC103">The &year_week Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&year_week()
+&year_week(<I>date</I>)
+</PRE>
+<P>Returns the week of the year for the specified date, or for the current
+date if no argument is given.  Week 1 is the first full week, starting with
+a Sunday.
+
+<A NAME="julian_date">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC104">The &julian_date Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&julian_date()
+&julian_date(<I>date</I>)
+</PRE>
+<P>Returns the Julian date for the specified date, or for the current
+date if no argument is given.  Day 1 is January 1.
+
+<A NAME="lillian_date">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC105">The &lillian_date Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&lillian_date()
+&lillian_date(<I>date</I>)
+</PRE>
+<P>Returns the Lillian date for the specified date, or for the current
+date if no argument is given.  This is the number of days since a starting
+(but unspecified) epoch (which in fact is around 1582).
+
+<A NAME="date_to_days">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC106">The &date_to_days Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&date_to_days(<I>date</I>)
+</PRE>
+<P>Returns the Lillian date for the specified date.  This function is
+really a the same as &lillian_date() except that you must supply a
+date argument.  It's provided for orthogonality with &days_to_date().
+
+<A NAME="days_to_date">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC107">The &days_to_date Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&days_to_date(<I>days</I>)
+</PRE>
+<P>Converts a Lillian date back into a normal date in the form
+yyyymmdd.  You can use this function (in combination with the
+reverse function, &date_to_days()) to calculate past and future
+dates.
+
+<A NAME="future_date">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC108">The &future_date Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&future_date(<I>days</I>)
+&future_date(<I>days</I>,<I>date</I>)
+</PRE>
+<P>Calculates a date at some point in the future.  For instance,
+19991217 will produce tomorrow's date.  If the date argument is
+not provided, calculates from today.
+
+<A NAME="past_date">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC109">The &past_date Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&past_date(<I>days</I>)
+&past_date(<I>days</I>,<I>date</I>)
+</PRE>
+<P>Calculates a date at some point in the past.  For instance,
+19991215 will produce yesterday's date.  If the date argument is
+not provided, calculates from today.
+
+<A NAME="date_diff">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC110">The &date_diff Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&date_diff(<I>date</I>)
+&date_diff(<I>date1</I>,<I>date2</I>)
+</PRE>
+<P>Calculates the difference between two dates, in days.  The calculation is
+date1 - date2.  If date2 is not supplied, calculates using today, and will
+therefore return a positive value if date is in the future, and a negative
+value if date is in the past.
+
+<A NAME="image_width">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC111">The &image_width Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&image_width(<I>filename</I>)
+</PRE>
+<P>Returns the width of the specified image, which can be a GIF or
+JPEG file, in any of the common formats (including progressive
+encoding).  The width is returned in pixels.
+
+<A NAME="image_height">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC112">The &image_height Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&image_height(<I>filename</I>)
+</PRE>
+<P>Returns the height of the specified image, which can be a GIF or
+JPEG file, in any of the common formats (including progressive
+encoding).  The height is returned in pixels.
+
+<A NAME="file_size">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC113">The &file_size Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&file_size(<I>filename</I>)
+&file_size(<I>filename</I>, K)
+&file_size(<I>filename</I>, M)
+</PRE>
+<P>Returns the size of the specified file.  If the second argument is
+K or M, calculates the size in Kb or Mb as appropriate.  Always returns
+an integer value.
+
+<A NAME="file_date">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC114">The &file_date Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&file_date(<I>filename</I>)
+</PRE>
+<P>Returns the date of the specified file, as an 8-digit value, YYYYMMDD.
+
+<A NAME="file_time">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC115">The &file_time Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&file_time(<I>filename</I>)
+</PRE>
+<P>Returns the time of the specified file, as a string, HH:MM:SS.
+
+<A NAME="normalise">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC116">The &normalise Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&normalise(<I>filepath</I>)
+</PRE>
+<P>Returns the filepath in a UNIX-style format. You can use this, for
+instance, under MS-DOS, when filenames taken from (e.g.) the environment
+contain back slashes which can cause problems.  Replaces \ by / and
+spaces by underlines.
+
+<A NAME="system">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC117">The &system Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&system(<I>string</I>)
+</PRE>
+<P>Returns the result of some system utility.  For instance:
+<PRE>.define SERVER  http://&system("hostname")
+</PRE>
+
+<A NAME="upper">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC118">The &upper Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&upper(<I>string</I>)
+</PRE>
+<P>Returns the string in uppercase letters.
+
+<A NAME="lower">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC119">The &lower Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&lower(<I>string</I>)
+</PRE>
+<P>Returns the string in lowercase letters.
+
+<A NAME="pageref">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC120">The &pageref Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&pageref(<I>"page"</I>,<I>"title"</I>)
+</PRE>
+Does the same as this htmlpp code:
+.if "name" eq "docs/develop.html"
+title
+.else
+&lt;A HREF="page"&gt;title&lt;/A&gt;
+.endif
+<P>This function strips-off any HTML tags that you put around the title text
+when it uses it to build a link.  So, you can do this kind of thing, which I
+often use to build an index in the page footer:
+.block index_entry
+&pageref("$(INDEX_PAGE)","&lt;EM&gt;$(INDEX_TITLE)&lt;/EM&gt;")
+.endblock
+
+<A NAME="relpath">&nbsp;</A>
+<FONT color="#000080" face="arial"><H3><A NAME="TOC121">The &relpath Function</A></H3></FONT>
+<P>Syntax:
+<PRE>&relpath([<I>"from"</I>], <I>"to"</I>)</PRE>
+<P>Returns the relative path from 'from' to 'to'. If only one argument
+is specified, the current HTML page is used as 'from'. For example:
+<PRE>&relpath("john/peter/david/me.html","john/henry/you.html")</PRE>
+would return "../../henry/you.html".  You can use this to create a web site
+with pure relative references to other pages. Remember that you don't need
+to use this function with $(*name) links if $(USE_RELPATH) is set to 1.
+Note that if you use
+relative references you can test and use the HTML pages on a local hard
+disk as well as on the server without changes.
+
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC122">Multipass Processing</A></H2></FONT>
+
+<P>Since version 2.00, htmlpp uses a multipass technique to allow
+embedded blocks.  For example, you can place .include actions in
+the header or footer blocks, or define your own blocks that have
+.define, .page, and other actions.
+
+<P>Htmlpp handles this using the following rules:
+<OL>
+<LI>.include actions are executed immediately.
+<LI>.block actions are executed immediately.
+<LI>.build actions are executed as soon as possible after the
+first pass.  This allows htmlpp time to collect the document
+titles, which it needs to build the table of contents.
+<LI>.if ... .else ... .endif actions are handled at once.
+<LI>.page commands are handled in two stages; headers and
+footers are built in the second pass, and individual page
+files are built during the last pass.
+<LI>Htmlpp will process the document (actually a temporary copy)
+as many times as necessary, until all actions have been processed.
+</OL>
+<P>One consequence of this is that htmlpp needs a minimum of 3
+passes to fully process a document, one to collect all the titles;
+one to insert page headers and footers, and a last one to break the
+text into individual pages.  If any genius can help me reduce this
+to two (or one!) pass, go ahead.
+
+<P>The upside is that you can do really funky stuff in headers
+and footers: for instance, the htmlpp pages build a document
+index in the footer, switching hyperlinks on and off to indicate
+the current page in the index.
+
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC123">Multipass Debugging</A></H2></FONT>
+
+<P>To see what htmlpp is doing with its passes, use the -debug
+option, like this:
+<PRE>htmlpp -debug <EM>filename</EM></PRE>
+This leaves a number of .wrk files lying around; these contain
+the result of each pass.
+
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC124">Other Things to Know</A></H2></FONT>
+
+<UL>
+<LI>If you end a line with '\', it will be output to the final HTML file
+without a trailing newline (and without the '\').
+</UL>
+
+</DIV>
+</TD></TR>
+<TR><TD align="center" valign="bottom">
+<A href="http://www.imatix.com/"><IMG src="../images/im0096c.gif" width=96 height=36 alt="iMatix"  border=0>
+</A>
+</TD><TD colspan=10>
+<TABLE width="100%" border=0><TR><TD align="left">&nbsp;<BR>
+<FONT size=-1 color="#FFFF99">Copyright &copy; 1996-99
+iMatix Corporation.<BR> Hosted by <A href="http://www.openavenue.com/" class="footer">OpenAvenue.com</A>.
+Made with Htmlpp. Powered by <A href="http://www.xitami.com/" class="footer">Xitami</A>.</FONT></TD>
+<TD valign="top" align="right">&nbsp;<BR>
+<FONT size=-1 color="#FFFF99">Updated: October 20, 1999<BR>
+<A href="mailto:ebb@imatix.com?subject=Feedback on Htmlpp.org site" class="footer">Feedback</A></FONT>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</BODY></HTML>

@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML lang=en><HEAD>
+<!--Revised: 16 Dec, 1999 By: Enrique Bengoechea-->
+<META http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<META name=author content="Enrique Bengoechea">
+<TITLE>htmlpp: Htmlpp Documentation</TITLE>
+<STYLE type="text/css">
+<!--
+BODY {margin: 0em}
+A.footer {color: #CCFFFF}
+A.index {text-decoration: none}
+-->
+</STYLE>
+</HEAD>
+<BODY onLoad="focus()" bgcolor="#000080" marginwidth=0 marginheight=0
+margintop=0 marginbottom=0 marginleft=0 marginright=0>
+
+<CENTER>
+<TABLE width="100%" border=0 cellspacing=0 celpadding=5 bgcolor="#000080"><TR>
+<TD align="left" valign="top">
+<A href="../index.html"><IMG src="../images/htmlpp1.gif" width=100 height=75 alt="Htmlpp" border=0>
+</A></TD>
+<TD align="center" valign="center" colspan=10>
+<FONT color="#FFFF99" face="arial"><H1>Htmlpp Documentation</H1></FONT>
+</TR><TR>
+<TD valign=TOP nowrap rowspan=2>
+&nbsp;<BR>
+<A href="../index.html" class="index" title="Htmlpp Homepage"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Home</FONT></A>&nbsp;<BR>
+<A href="../introduction/index.html" class="index" title="What is Htmlpp and how to start using it"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Introduction</FONT></A>&nbsp;<BR>
+<A href="../download/index.html" class="index" title="How to get Htmlpp and how to install it"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Download</FONT></A>&nbsp;<BR>
+<A href="index.html" class="index" title="Htmlpp documentation: Reference, FAQ, Known bugs..."><IMG src="../images/sunken.gif" width=36 height=45 alt="" border=0 align=middle>
+&nbsp;<FONT color="#CCFFFF" face="arial"><STRONG>Docs</STRONG></FONT></A>&nbsp;<BR>
+<A href="../support/index.html" class="index" title="What to do if you have problems with Htmlpp"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Support</FONT></A>&nbsp;<BR>
+<A href="../examples/index.html" class="index" title="Examples of Htmlpp source code"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Examples</FONT></A>&nbsp;<BR>
+<A href="../addons/index.html" class="index" title="Utilities to improve your productivity with Htmlpp"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Add-ons</FONT></A>&nbsp;<BR>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="stable.html">v.4.2a Ref</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="develop.html">v.4.2c Ref</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="white"><FONT face="arial"><STRONG>FAQ</STRONG></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="bugs.html">Known Bugs</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="history.html">History</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+</TR><TR>
+<TD valign=top bgcolor="white" colspan=10 >
+<DIV style="padding-left:15pt;padding-right:10pt;padding-top:10pt;padding-bottom:5pt;">
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt">Frequently Asked Questions</H2></FONT>
+<!-- -->
+<!-- -->
+<!-- -->
+<BR><A href="FAQ.html#TOC125">1. Why does my .if command not work?</A>
+<BR><A href="FAQ.html#TOC126">2. Why does my .if command still not work?</A>
+<BR><A href="FAQ.html#TOC127">3. How do I install htmlpp on UNIX?</A>
+<BR><A href="FAQ.html#TOC128">5. Do you know of any good link checkers?</A>
+<!-- -->
+<!-- -->
+<!-- -->
+
+<FONT color="#000080" face="arial"><H4 style="margin-left:-13pt"><A NAME="TOC125">1. Why does my .if command not work?</A></H4></FONT>
+
+<P>Even without looking, I'm sure you're trying something like <CODE>.if UNDEF = Xyz</CODE>. Well,
+this won't work.  Htmlpp is lazy, and sends all its .if commands to Perl to evaluate.  Perl thinks
+that '=' is an assignment, not a comparison.  Which always works, or perhaps never does, but
+certainly will not change depending on the value of <CODE>UNDEF</CODE>. To cut a long story short,
+use '==' for comparing numbers and 'eq' for comparing strings, and buy the Camel Book.
+
+<FONT color="#000080" face="arial"><H4 style="margin-left:-13pt"><A NAME="TOC126">2. Why does my .if command still not work?</A></H4></FONT>
+<P>Well, maybe you made a mistake.  For example, this is wrong:
+<PRE>if $(TITLE) eq "first second"
+</PRE>
+You have to enclose both arguments in quotes, like this:
+<PRE>if "$(TITLE)" eq "first second"
+</PRE>
+
+<FONT color="#000080" face="arial"><H4 style="margin-left:-13pt"><A NAME="TOC127">3. How do I install htmlpp on UNIX?</A></H4></FONT>
+<P>Put it into a common directory like <TT>/usr/local/bin</TT>; make htmlpp
+executable (<KBR>chmod +x htmlpp</KBR>); make sure its <TT>.l</TT> and <TT>.pl</TT> files are
+in the same place; put this directory on the PERLLIB path, and put
+it on your PATH too.  That should work.  If you don't have access
+to /usr/local/bin (i.e. you're not root, which if you were you'd
+probably not need help at this point) then make a bin directory
+under your login directory and add $HOME/bin to your path.
+
+<FONT color="#000080" face="arial"><H4 style="margin-left:-13pt">4. How do I change the <TT>.htm</TT> extension to <TT>.html</TT>?</H4></FONT>
+<P>Redefine the <CODE>html</CODE> variable.
+
+<FONT color="#000080" face="arial"><H4 style="margin-left:-13pt"><A NAME="TOC128">5. Do you know of any good link checkers?</A></H4></FONT>
+<P>Try <A HREF="http://starship.skyport.net/crew/marduk/linbot/">
+Linbot</A>, written in Python, <A HREF="http://www.snafu.de/~tilman/xenulink.html">Xenu</A> or
+<A HREF="http://www.goldwarp.com/bowlin/linklint/">Linklint</A> in Perl.
+<A HREF="http://www.netmechanic.com/">NetMechanic</A> is a good on-line alternative.
+
+</DIV>
+</TD></TR>
+<TR><TD align="center" valign="bottom">
+<A href="http://www.imatix.com/"><IMG src="../images/im0096c.gif" width=96 height=36 alt="iMatix"  border=0>
+</A>
+</TD><TD colspan=10>
+<TABLE width="100%" border=0><TR><TD align="left">&nbsp;<BR>
+<FONT size=-1 color="#FFFF99">Copyright &copy; 1996-99
+iMatix Corporation.<BR> Hosted by <A href="http://www.openavenue.com/" class="footer">OpenAvenue.com</A>.
+Made with Htmlpp. Powered by <A href="http://www.xitami.com/" class="footer">Xitami</A>.</FONT></TD>
+<TD valign="top" align="right">&nbsp;<BR>
+<FONT size=-1 color="#FFFF99">Updated: December 20, 1999<BR>
+<A href="mailto:ebb@imatix.com?subject=Feedback on Htmlpp.org site" class="footer">Feedback</A></FONT>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</BODY></HTML>

@@ -1,0 +1,207 @@
+.-----------------------------------------------------------------
+.-  home.htp  -  Main htmlpp.org source document
+.-  Copyright (c) 1999 iMatix Corporation
+.-----------------------------------------------------------------
+.-  Written:  19 Sep 1999  Enrique Bengoechea <ebb@eco.uc3m.es>
+.-  $Id: $
+.-----------------------------------------------------------------
+.include prelude.def
+.include macros.def
+.include page.def
+.--------------------------------------------------------------------
+.define section home
+.- $(updated) is the date used for the "Updated:" text at the end of the document.
+.- If undefined, the processing date is used.
+.define updated
+.define keywords HTML,preprocessor,htmlpp,homepage,homesite,builder,generator,tool,web page,site
+.define description Htmlpp is a preprocessor for HTML documents. -
+Its purpose is to simplify the work of writing and packaging large numbers of -
+HTML documents. It makes easy to generate and build complex web sites.
+.-
+.page $(home) = An HTML preprocessor
+<TABLE width="99%" cellspacing="4"><TR><TD width="60%" valign="top" rowspan=2>
+<FONT color="$(indexbgcolor)" face="arial"><H2>Welcome to Htmlpp</H2></FONT>
+
+<P>Welcome to the htmlpp website.
+Htmlpp is a pre-processor for HTML documents.
+Its purpose is to simplify the work of writing and packaging large numbers of
+HTML documents. These pages describe how to install and use htmlpp. They also
+contain many example source code, configuration files for several editors and
+other add-ons. You'll also find a $(*FAQ=FAQ section) that provides answers to
+frequently-asked questions. Please read this FAQ before asking for technical
+support. The $(*group=htmlpp discussion group) is an active forum and an
+excellent place to ask questions and discuss issues surrounding htmlpp.</P>
+
+<P>To download htmlpp go to the $(*download=download corner).</P>
+
+<P>If you use htmlpp, please register now for information about bug fixes
+and updates.  It's free - just email to <.MAILTO "$(register)?subject=register htmlpp">
+with subject <STRONG>register htmlpp</STRONG> and your comments, if any.</P>
+
+<P>Htmlpp is free software written in Perl, and copyright &copy;
+1996-&date("yy") iMatix.  It is distributed with full sources according
+to the $(*gnugpl=GNU General Public License).</P>
+
+</TD><TD width="40%" align="center" valign="top">
+.---- WHAT'S NEW TABLE ------
+.macro whats_new <DT><FONT face="arial" size=-1 color="green"><STRONG>\
+&date("d mmm, yy",$1)</FONT></STRONG></DT>
+<DD style="margin-left=2ex;">$+</DD>
+.endmacro
+.-
+<TABLE bgcolor="$(tabbgcolor)" cellpadding=5>
+<TR><TH bgcolor="white"><FONT face="arial">What's New?</FONT></TH></TR>
+<TR><TD valign="top">
+<DL>
+.whats_new 19991220 New utilities for editing Htmlpp documents from VIM
+.whats_new 19991220 $(*examples=Examples) section ready!
+.whats_new 19991019 New Development version 4.2c released
+.whats_new 19991019 Download $(*addons=configuration files) for Homesite and -
+VIM editors!
+</DL>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+.endpage
+.--------------------------------------------------------------------
+.define section introduction
+.define updated 19991020
+.define subsection introduction
+.- Reset $(keywords) and $(description) or the ones for the previous document will be used
+.define keywords
+.define description
+.page $(introduction) = Introduction to htmlpp
+
+<P>An article in the $(*linuxjnl=December 1997 issue of Linux Journal)
+describes htmlpp, and is a good introduction to this tool.
+
+.H2 What is htmlpp?
+<UL>
+<LI>Htmlpp is a pre-processor for HTML documents.
+<LI>Its purpose is to simplify the work of writing and packaging
+large numbers of HTML documents.
+<LI>It acts like a compiler: you provide an input <EM>source text</EM>
+and htmlpp produces the HTML documents from that.  This is easier
+and safer than trying to edit and manage separate HTML documents.
+<LI>To use htmlpp, you should be comfortable writing HTML without
+help from a special HTML editor.  This is not usually a problem,
+since HTML is a simple language.
+<LI>Htmlpp is free software written in Perl, and copyright &copy;
+1996-&date("yy") iMatix.  It is distributed with full sources according
+to the $(*gnugpl=GNU General Public License).
+</UL>
+
+.H2 What does htmlpp do?
+<UL>
+<LI>It breaks one input source text file into several HTML
+documents. Typically you will want to edit a larger file (it is
+faster and easier), but provide the information in smaller pieces
+on-line (people can access it easier).  Htmlpp makes this
+possible.
+<LI>It lets you define symbols like <.SYMBOL version> in one place,
+then use these in the text like this: <.SYMBOL $\(version)> so that
+you can make changes in a single place only, not throughout the
+text.
+<LI>It creates tables of contents, and links to chain pages
+together in sequence.
+<LI>It adds headers and footers to pages, so that you can keep a
+consistent style in all HTML pages.
+<LI>It lets you define macros to simplify HTML markup.
+<LI>It converts plain text into HTML using guru.
+<LI>It converts accented characters into HTML metacharacters.
+<LI>It allows you to embed Perl code and to include the output of any
+external program into the page.
+<LI>It provides features to build multilingual sites.
+<LI>It creates and queries flat-text databases.
+<LI>It provides many built-in functions to simplify HTML writing, like
+calculating image dimensions, file sizes, working with dates, etc.
+<LI>It automates reprocessing of documents in big sites when some content
+expires and when some information is modified in other page
+<EM>(development version)</EM>.
+</UL>
+
+.H2 What Are The Alternatives?
+<UL>
+<LI>A lot of work by hand.
+<LI>A number of other products work somewhat like htmlpp.  Take
+a look at the eponymously named htmlpp at $(*htmlppfr=).
+</UL>
+.--------------------------------------------------------------------
+.endpage
+.define subsection getting_started
+.define updated 19991020
+.page $(getting_started) = Introduction to htmlpp
+
+.H2 How do I use htmlpp?
+<UL>
+<LI>Take a look at $(*htmlpp.htp), which is the documentation
+source for htmlpp's own on-line documentation and comes with htmlpp.
+This is the main example for htmlpp.
+<LI>The <.FILENAME template.zip> file that is supplied with htmlpp
+contains the basis for a new project.  Unzip this file into a
+working directory.  You'll find:
+<UL>
+<LI><.FILENAME template.txt> - template for new documentation text
+files.
+<LI><.FILENAME prelude.def> - standard definitions - e.g. page header
+and footer.
+<LI><.FILENAME contents.def> - build table of contents.
+<LI><.FILENAME filetype.def> - definitions for various file
+types.
+</UL>
+
+<P>As a start, run htmlpp on template.txt:
+<PRE>C:\SOMEDIR\&gt;htmlpp template.txt</PRE>
+<P>This creates a set of HTML files (extension <.FILENAME .htm>).  You can open
+<.FILENAME index.htm> with a browser, and the links should work.
+Then edit the source files using any text editor and modify them to your
+will.
+<LI>In general, htmlpp generates HTML pages that use <EM>relative
+addressing</EM>, so that pages refer to each other without
+specifying a host or path.  This allows you to test and use the
+HTML pages on a local hard disk.
+</UL>
+
+<P>Htmlpp creates a file called <.FILENAME errors.lst> which
+contains any errors.  This file is useful if you are building
+really large documentation kits, and messages scroll off the
+screen.</P>
+
+<P>The <.COMMAND -debug> command-line option is also userful to
+see what htmlpp is doing with its passes:
+<PRE>htmlpp -debug <EM>filename</EM></PRE>
+This leaves a number of <.FILENAME .wrk> files lying around; these contain
+the result of each pass, and allow you to debug your source code.</P>
+
+<P>If you have problems, follow the instructions in the
+$(*support=support section).</P>
+.-
+.--------------------------------------------------------------------
+.endpage
+.define section download
+.define subsection download
+.define updated 19991020
+.page $(download) = Downloading and Installing
+
+.macro download_file
+<A href="$($1)">$($1)</A><BR>\
+<EM>&file_size("$(BASEDIR)/$(download-dir)/$($1)",K) Kbs.</EM>
+.endmacro
+<CENTER><TABLE border=1>
+<TR bgcolor="#B0C4DE" align="center">
+  <TD bgcolor="#FFEFD5"></TD>
+  <TD>DOS, OS/2 or Win32</TD><TD>Unix</TD><TD>RedHat RPM</TD></TR>
+<TR>
+  <TD bgcolor="#B0C4DE">Current Release - $(version)</TD>
+  <TD align="center"><.download_file htmlpp.zip></TD>
+  <TD align="center"><.download_file htmlpp.tgz></TD>
+  <TD align="center"></TD></TR>
+<TR>
+  <TD bgcolor="#B0C4DE">Development Release - $(dev_version)</TD>
+  <TD align="center"><.download_file dev_htmlpp.zip></TD>
+  <TD align="center"><.download_file dev_htmlpp.tgz></TD>
+  <TD align="center"></TD></TR>
+</TR>
+</TABLE></CENTER>
+<UL>
+<LI>You need PKUNZIP for MS-DOS, $(*info-zip=Info-zip's unzip) for
+most platforms, or some other com

@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML lang=en><HEAD>
+<!--Revised: 16 Dec, 1999 By: Enrique Bengoechea-->
+<META http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<META name=author content="Enrique Bengoechea">
+<TITLE>htmlpp: Introduction to htmlpp</TITLE>
+<STYLE type="text/css">
+<!--
+BODY {margin: 0em}
+A.footer {color: #CCFFFF}
+A.index {text-decoration: none}
+-->
+</STYLE>
+</HEAD>
+<BODY onLoad="focus()" bgcolor="#000080" marginwidth=0 marginheight=0
+margintop=0 marginbottom=0 marginleft=0 marginright=0>
+
+<CENTER>
+<TABLE width="100%" border=0 cellspacing=0 celpadding=5 bgcolor="#000080"><TR>
+<TD align="left" valign="top">
+<A href="../index.html"><IMG src="../images/htmlpp1.gif" width=100 height=75 alt="Htmlpp" border=0>
+</A></TD>
+<TD align="center" valign="center" colspan=4>
+<FONT color="#FFFF99" face="arial"><H1><A NAME="TOC3">Introduction to htmlpp</A></H1></FONT>
+</TR><TR>
+<TD valign=TOP nowrap rowspan=2>
+&nbsp;<BR>
+<A href="../index.html" class="index" title="Htmlpp Homepage"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Home</FONT></A>&nbsp;<BR>
+<IMG src="../images/sunken.gif" width=36 height=45 alt="Introduction" border=0 align=middle>
+&nbsp;<FONT color="#CCFFFF" face="arial"><STRONG>Introduction</STRONG></FONT>&nbsp;<BR>
+<A href="../download/index.html" class="index" title="How to get Htmlpp and how to install it"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Download</FONT></A>&nbsp;<BR>
+<A href="../docs/index.html" class="index" title="Htmlpp documentation: Reference, FAQ, Known bugs..."><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Docs</FONT></A>&nbsp;<BR>
+<A href="../support/index.html" class="index" title="What to do if you have problems with Htmlpp"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Support</FONT></A>&nbsp;<BR>
+<A href="../examples/index.html" class="index" title="Examples of Htmlpp source code"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Examples</FONT></A>&nbsp;<BR>
+<A href="../addons/index.html" class="index" title="Utilities to improve your productivity with Htmlpp"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Add-ons</FONT></A>&nbsp;<BR>
+<TD align=center bgcolor="white"><FONT face="arial"><STRONG>Overview</STRONG></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="getting_started.html">Getting&nbsp;Started</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+</TR><TR>
+<TD valign=top bgcolor="white" colspan=4 >
+<DIV style="padding-left:15pt;padding-right:10pt;padding-top:10pt;padding-bottom:5pt;">
+
+<P>An article in the <A href="http://www.linuxjournal.com/issue44/2448.html">December 1997 issue of Linux Journal</A>
+describes htmlpp, and is a good introduction to this tool.
+
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC4">What is htmlpp?</A></H2></FONT>
+<UL>
+<LI>Htmlpp is a pre-processor for HTML documents.
+<LI>Its purpose is to simplify the work of writing and packaging
+large numbers of HTML documents.
+<LI>It acts like a compiler: you provide an input <EM>source text</EM>
+and htmlpp produces the HTML documents from that.  This is easier
+and safer than trying to edit and manage separate HTML documents.
+<LI>To use htmlpp, you should be comfortable writing HTML without
+help from a special HTML editor.  This is not usually a problem,
+since HTML is a simple language.
+<LI>Htmlpp is free software written in Perl, and copyright &copy;
+1996-99 iMatix.  It is distributed with full sources according
+to the <A href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</A>.
+</UL>
+
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC5">What does htmlpp do?</A></H2></FONT>
+<UL>
+<LI>It breaks one input source text file into several HTML
+documents. Typically you will want to edit a larger file (it is
+faster and easier), but provide the information in smaller pieces
+on-line (people can access it easier).  Htmlpp makes this
+possible.
+<LI>It lets you define symbols like <CODE>version</CODE> in one place,
+then use these in the text like this: <CODE>4.2a</CODE> so that
+you can make changes in a single place only, not throughout the
+text.
+<LI>It creates tables of contents, and links to chain pages
+together in sequence.
+<LI>It adds headers and footers to pages, so that you can keep a
+consistent style in all HTML pages.
+<LI>It lets you define macros to simplify HTML markup.
+<LI>It converts plain text into HTML using guru.
+<LI>It converts accented characters into HTML metacharacters.
+<LI>It allows you to embed Perl code and to include the output of any
+external program into the page.
+<LI>It provides features to build multilingual sites.
+<LI>It creates and queries flat-text databases.
+<LI>It provides many built-in functions to simplify HTML writing, like
+calculating image dimensions, file sizes, working with dates, etc.
+<LI>It automates reprocessing of documents in big sites when some content
+expires and when some information is modified in other page
+<EM>(development version)</EM>.
+</UL>
+
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC6">What Are The Alternatives?</A></H2></FONT>
+<UL>
+<LI>A lot of work by hand.
+<LI>A number of other products work somewhat like htmlpp.  Take
+a look at the eponymously named htmlpp at <A href="http://www.eleves.ens.fr:8080/home/nthiery">http://www.eleves.ens.fr:8080/home/nthiery</A>.
+</UL>
+</DIV>
+</TD></TR>
+<TR><TD align="center" valign="bottom">
+<A href="http://www.imatix.com/"><IMG src="../images/im0096c.gif" width=96 height=36 alt="iMatix"  border=0>
+</A>
+</TD><TD colspan=4>
+<TABLE width="100%" border=0><TR><TD align="left">&nbsp;<BR>
+<FONT size=-1 color="#FFFF99">Copyright &copy; 1996-99
+iMatix Corporation.<BR> Hosted by <A href="http://www.openavenue.com/" class="footer">OpenAvenue.com</A>.
+Made with Htmlpp. Powered by <A href="http://www.xitami.com/" class="footer">Xitami</A>.</FONT></TD>
+<TD valign="top" align="right">&nbsp;<BR>
+<FONT size=-1 color="#FFFF99">Updated: October 20, 1999<BR>
+<A href="mailto:ebb@imatix.com?subject=Feedback on Htmlpp.org site" class="footer">Feedback</A></FONT>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</BODY></HTML>

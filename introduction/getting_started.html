@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML lang=en><HEAD>
+<!--Revised: 16 Dec, 1999 By: Enrique Bengoechea-->
+<META http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<META name=author content="Enrique Bengoechea">
+<TITLE>htmlpp: Introduction to htmlpp</TITLE>
+<STYLE type="text/css">
+<!--
+BODY {margin: 0em}
+A.footer {color: #CCFFFF}
+A.index {text-decoration: none}
+-->
+</STYLE>
+</HEAD>
+<BODY onLoad="focus()" bgcolor="#000080" marginwidth=0 marginheight=0
+margintop=0 marginbottom=0 marginleft=0 marginright=0>
+
+<CENTER>
+<TABLE width="100%" border=0 cellspacing=0 celpadding=5 bgcolor="#000080"><TR>
+<TD align="left" valign="top">
+<A href="../index.html"><IMG src="../images/htmlpp1.gif" width=100 height=75 alt="Htmlpp" border=0>
+</A></TD>
+<TD align="center" valign="center" colspan=4>
+<FONT color="#FFFF99" face="arial"><H1><A NAME="TOC7">Introduction to htmlpp</A></H1></FONT>
+</TR><TR>
+<TD valign=TOP nowrap rowspan=2>
+&nbsp;<BR>
+<A href="../index.html" class="index" title="Htmlpp Homepage"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Home</FONT></A>&nbsp;<BR>
+<IMG src="../images/sunken.gif" width=36 height=45 alt="Introduction" border=0 align=middle>
+&nbsp;<FONT color="#CCFFFF" face="arial"><STRONG>Introduction</STRONG></FONT>&nbsp;<BR>
+<A href="../download/index.html" class="index" title="How to get Htmlpp and how to install it"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Download</FONT></A>&nbsp;<BR>
+<A href="../docs/index.html" class="index" title="Htmlpp documentation: Reference, FAQ, Known bugs..."><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Docs</FONT></A>&nbsp;<BR>
+<A href="../support/index.html" class="index" title="What to do if you have problems with Htmlpp"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Support</FONT></A>&nbsp;<BR>
+<A href="../examples/index.html" class="index" title="Examples of Htmlpp source code"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Examples</FONT></A>&nbsp;<BR>
+<A href="../addons/index.html" class="index" title="Utilities to improve your productivity with Htmlpp"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Add-ons</FONT></A>&nbsp;<BR>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="index.html">Overview</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="white"><FONT face="arial"><STRONG>Getting&nbsp;Started</STRONG></FONT></TD>
+<TD bgcolor="#000080"></TD>
+</TR><TR>
+<TD valign=top bgcolor="white" colspan=4 >
+<DIV style="padding-left:15pt;padding-right:10pt;padding-top:10pt;padding-bottom:5pt;">
+
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC8">How do I use htmlpp?</A></H2></FONT>
+<UL>
+<LI>Take a look at <A href="../docs/htmlpp.htp">htmlpp.htp</A>, which is the documentation
+source for htmlpp's own on-line documentation and comes with htmlpp.
+This is the main example for htmlpp.
+<LI>The <TT>template.zip</TT> file that is supplied with htmlpp
+contains the basis for a new project.  Unzip this file into a
+working directory.  You'll find:
+<UL>
+<LI><TT>template.txt</TT> - template for new documentation text
+files.
+<LI><TT>prelude.def</TT> - standard definitions - e.g. page header
+and footer.
+<LI><TT>contents.def</TT> - build table of contents.
+<LI><TT>filetype.def</TT> - definitions for various file
+types.
+</UL>
+
+<P>As a start, run htmlpp on template.txt:
+<PRE>C:\SOMEDIR\&gt;htmlpp template.txt</PRE>
+<P>This creates a set of HTML files (extension <TT>.htm</TT>).  You can open
+<TT>index.htm</TT> with a browser, and the links should work.
+Then edit the source files using any text editor and modify them to your
+will.
+<LI>In general, htmlpp generates HTML pages that use <EM>relative
+addressing</EM>, so that pages refer to each other without
+specifying a host or path.  This allows you to test and use the
+HTML pages on a local hard disk.
+</UL>
+
+<P>Htmlpp creates a file called <TT>errors.lst</TT> which
+contains any errors.  This file is useful if you are building
+really large documentation kits, and messages scroll off the
+screen.</P>
+
+<P>The <CODE>-debug</CODE> command-line option is also userful to
+see what htmlpp is doing with its passes:
+<PRE>htmlpp -debug <EM>filename</EM></PRE>
+This leaves a number of <TT>.wrk</TT> files lying around; these contain
+the result of each pass, and allow you to debug your source code.</P>
+
+<P>If you have problems, follow the instructions in the
+<A href="../support/index.html">support section</A>.</P>
+</DIV>
+</TD></TR>
+<TR><TD align="center" valign="bottom">
+<A href="http://www.imatix.com/"><IMG src="../images/im0096c.gif" width=96 height=36 alt="iMatix"  border=0>
+</A>
+</TD><TD colspan=4>
+<TABLE width="100%" border=0><TR><TD align="left">&nbsp;<BR>
+<FONT size=-1 color="#FFFF99">Copyright &copy; 1996-99
+iMatix Corporation.<BR> Hosted by <A href="http://www.openavenue.com/" class="footer">OpenAvenue.com</A>.
+Made with Htmlpp. Powered by <A href="http://www.xitami.com/" class="footer">Xitami</A>.</FONT></TD>
+<TD valign="top" align="right">&nbsp;<BR>
+<FONT size=-1 color="#FFFF99">Updated: October 20, 1999<BR>
+<A href="mailto:ebb@imatix.com?subject=Feedback on Htmlpp.org site" class="footer">Feedback</A></FONT>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</BODY></HTML>

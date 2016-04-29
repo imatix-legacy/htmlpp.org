@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML lang=en><HEAD>
+<!--Revised: 16 Dec, 1999 By: Enrique Bengoechea-->
+<META http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<META name=author content="Enrique Bengoechea">
+<TITLE>htmlpp: A macro for inserting images</TITLE>
+<STYLE type="text/css">
+<!--
+BODY {margin: 0em}
+A.footer {color: #CCFFFF}
+A.index {text-decoration: none}
+-->
+</STYLE>
+</HEAD>
+<BODY onLoad="focus()" bgcolor="#000080" marginwidth=0 marginheight=0
+margintop=0 marginbottom=0 marginleft=0 marginright=0>
+
+<CENTER>
+<TABLE width="100%" border=0 cellspacing=0 celpadding=5 bgcolor="#000080"><TR>
+<TD align="left" valign="top">
+<A href="../index.html"><IMG src="../images/htmlpp1.gif" width=100 height=75 alt="Htmlpp" border=0>
+</A></TD>
+<TD align="center" valign="center" colspan=4>
+<FONT color="#FFFF99" face="arial"><H1>Source Code Examples</H1></FONT>
+</TR><TR>
+<TD valign=TOP nowrap rowspan=2>
+&nbsp;<BR>
+<A href="../index.html" class="index" title="Htmlpp Homepage"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Home</FONT></A>&nbsp;<BR>
+<A href="../introduction/index.html" class="index" title="What is Htmlpp and how to start using it"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Introduction</FONT></A>&nbsp;<BR>
+<A href="../download/index.html" class="index" title="How to get Htmlpp and how to install it"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Download</FONT></A>&nbsp;<BR>
+<A href="../docs/index.html" class="index" title="Htmlpp documentation: Reference, FAQ, Known bugs..."><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Docs</FONT></A>&nbsp;<BR>
+<A href="../support/index.html" class="index" title="What to do if you have problems with Htmlpp"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Support</FONT></A>&nbsp;<BR>
+<A href="index.html" class="index" title="Examples of Htmlpp source code"><IMG src="../images/sunken.gif" width=36 height=45 alt="" border=0 align=middle>
+&nbsp;<FONT color="#CCFFFF" face="arial"><STRONG>Examples</STRONG></FONT></A>&nbsp;<BR>
+<A href="../addons/index.html" class="index" title="Utilities to improve your productivity with Htmlpp"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Add-ons</FONT></A>&nbsp;<BR>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="fullsites.html">Full Sites</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="white"><FONT face="arial"><STRONG>Snippets</STRONG></FONT></TD>
+<TD bgcolor="#000080"></TD>
+</TR><TR>
+<TD valign=top bgcolor="white" colspan=4 >
+<DIV style="padding-left:15pt;padding-right:10pt;padding-top:10pt;padding-bottom:5pt;">
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC7">A macro for inserting images</A></H2></FONT>
+<P align="right"><FONT color="#000080"><EM>Contributed by <A href="http://www.eco.uc3m.es/~ebb/">Enrique Bengoechea</A></EM></FONT>
+<P>The following macro simplifies the process of inserting images because it automatically
+computes the width and height of the image. It also allows adding any attribute to the tag:</P>
+
+<P><TABLE bgcolor="silver">
+<TR cellpading=5><TD align="left" bgcolor="lightblue"><STRONG><FONT face="arial">Macro to insert images 1: Source Code</FONT></STRONG></TD>
+<TD bgcolor="lightblue" align="right">Download:
+<A href="../sources/snippets/img1.htp">img1.htp</A>
+(134 bytes)</TD></TR>
+<TR><TD align="left" colspan=2>
+<CODE>1|&nbsp;<STRONG>.macro</STRONG> IMG<BR>
+2|&nbsp;<FONT color="darkblue">&lt;IMG src=&quot;$1&quot; \<BR>
+3|&nbsp;width=&quot;&image_width('$1')&quot; height=&quot;&image_height('$1')&quot;\<BR>
+4|&nbsp;<STRONG>.if</STRONG> qq~$+~<BR>
+5|&nbsp; $+&gt;</FONT><BR>
+6|&nbsp;<STRONG>.else</STRONG><BR>
+7|&nbsp;&gt;</FONT><BR>
+8|&nbsp;<STRONG>.endif</STRONG><BR>
+9|&nbsp;<STRONG>.endmacro</STRONG><BR>
+</CODE>
+</TD></TR></TABLE>
+<DL><DT><STRONG>Explanation</STRONG>
+<DD>The conditional in lines 4 to 6 are required if you don't want an ugly whitespace
+between the last attribute and the closing &quot;greater-than&quot; sign.
+</DD>
+<DT><STRONG>Usage</STRONG>
+<DD>Invoke the macro as <CODE>&lt;.IMG <EM</CODE>filename</EM> <EM>optional_attributes</EM>&gt;">, e.g.
+<CODE>&lt;.IMG logo.gif alt=&quot;iMatix Logo&quot; hreflang=&quot;en&quot;&gt;</CODE>.
+</DD>
+</DL>
+
+<HR>
+<P>In the above macro you must specify the images directory everytime you use it, unless images
+are stored in the same directory as the htmlpp document. You could easily modify the macro
+definition to specify the absolute filepath for the directory where you store images. But if you
+prefer to use relative directories, the following macro may prove useful:
+
+<P><TABLE bgcolor="silver">
+<TR cellpading=5><TD align="left" bgcolor="lightblue"><STRONG><FONT face="arial">Macro to insert images 2: Source Code</FONT></STRONG></TD>
+<TD bgcolor="lightblue" align="right">Download:
+<A href="../sources/snippets/img2.htp">img2.htp</A>
+(190 bytes)</TD></TR>
+<TR><TD align="left" colspan=2>
+<CODE>1|&nbsp;<STRONG>.macro</STRONG> IMG<BR>
+2|&nbsp;<FONT color="darkblue">&lt;IMG src=&quot;&relpath('$(img-dir)$1')&quot; \<BR>
+3|&nbsp;width=&quot;&image_width('$(DIR)/$(img-dir)$1')&quot; height=&quot;&image_height('$(DIR)/$(img-dir)$1')&quot;\<BR>
+4|&nbsp;<STRONG>.if</STRONG> qq~$+~<BR>
+5|&nbsp; $+&gt;</FONT><BR>
+6|&nbsp;<STRONG>.else</STRONG><BR>
+7|&nbsp;&gt;</FONT><BR>
+8|&nbsp;<STRONG>.endif</STRONG><BR>
+9|&nbsp;<STRONG>.endmacro</STRONG><BR>
+</CODE>
+</TD></TR></TABLE>
+<DL><DT><STRONG>Explanation</STRONG>
+<DD>In order for the macro to work, you must define the variables <CODE>$(img-dir)</CODE> and
+<CODE>$(DIR)</CODE> before using it. <CODE>$(DIR)</CODE> would be the base directory of the website,
+and <CODE>$(img-dir)</CODE> the images directory <EM>relative</EM> to the base directory.
+</DD>
+<DT><STRONG>Usage</STRONG>
+<DD>For the following structure:
+<PRE> /
+ |
+ -- website
+       |
+       -- about
+       |
+       -- images
+</PRE>
+You would make:
+
+<P><CODE>.define DIR /website<BR>
+.define images images/</CODE></P>
+
+and then use, for a page in directory &quot;about&quot;,
+<P><CODE>&lt;.IMG logo.gif alt=&quot;iMatix Logo&quot; hreflang=&quot;en&quot;&gt;</CODE></P>
+which would produce
+
+<P><CODE>&lt;IMG sr=&quot;../images/logo.gif&quot; width=&quot;50&quot; height=&quot;20&quot;
+alt=&quot;iMatix Logo&quot; hreflang=&quot;en&quot;&gt;</CODE></P>
+</DD>
+</DL>
+</DIV>
+<HR color="darkblue" noshade>
+<TABLE width="100%" border=0><TR>
+<TD width="10" align=left valign=middle><A href="snippet1.html"><IMG src="../images/prev.gif" width=10 height=19 alt="Previous" border=0>
+</A></TD>
+<TD>
+<TABLE width="100%" border=0><TR>
+<TD align="left" valign="bottom" width="40%"><FONT size="-2" face="arial"><A href="snippet1.html">Previous Snippet</A></FONT><BR>
+<FONT size="-1">Making a Calendar</FONT></TD>
+<TD align="center" valign="middle" width="20%"><A href="snippets.html"><IMG src="../images/up.gif" width=19 height=10 alt="Snippets List" border=0>
+</A><BR>
+<FONT size="-2" face="arial"><A href="snippets.html">Snippets List</A></FONT></TD>
+<TD align=right valign="bottom" width="40%">&nbsp;</TD>
+</TR></TABLE>
+<TD width="10" align=right valign=middle>&nbsp;</TD></TR>
+</TABLE>
+</TD></TR>
+<TR><TD align="center" valign="bottom">
+<A href="http://www.imatix.com/"><IMG src="../images/im0096c.gif" width=96 height=36 alt="iMatix"  border=0>
+</A>
+</TD><TD colspan=4>
+<TABLE width="100%" border=0><TR><TD align="left">&nbsp;<BR>
+<FONT size=-1 color="#FFFF99">Copyright &copy; 1996-99
+iMatix Corporation.<BR> Hosted by <A href="http://www.openavenue.com/" class="footer">OpenAvenue.com</A>.
+Made with Htmlpp. Powered by <A href="http://www.xitami.com/" class="footer">Xitami</A>.</FONT></TD>
+<TD valign="top" align="right">&nbsp;<BR>
+<FONT size=-1 color="#FFFF99">Updated: December 20, 1999<BR>
+<A href="mailto:ebb@imatix.com?subject=Feedback on Htmlpp.org site" class="footer">Feedback</A></FONT>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</BODY></HTML>

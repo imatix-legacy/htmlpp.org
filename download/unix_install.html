@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML lang=en><HEAD>
+<!--Revised: 16 Dec, 1999 By: Enrique Bengoechea-->
+<META http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<META name=author content="Enrique Bengoechea">
+<TITLE>htmlpp: Downloading and Installing</TITLE>
+<STYLE type="text/css">
+<!--
+BODY {margin: 0em}
+A.footer {color: #CCFFFF}
+A.index {text-decoration: none}
+-->
+</STYLE>
+</HEAD>
+<BODY onLoad="focus()" bgcolor="#000080" marginwidth=0 marginheight=0
+margintop=0 marginbottom=0 marginleft=0 marginright=0>
+
+<CENTER>
+<TABLE width="100%" border=0 cellspacing=0 celpadding=5 bgcolor="#000080"><TR>
+<TD align="left" valign="top">
+<A href="../index.html"><IMG src="../images/htmlpp1.gif" width=100 height=75 alt="Htmlpp" border=0>
+</A></TD>
+<TD align="center" valign="center" colspan=8>
+<FONT color="#FFFF99" face="arial"><H1><A NAME="TOC10">Downloading and Installing</A></H1></FONT>
+</TR><TR>
+<TD valign=TOP nowrap rowspan=2>
+&nbsp;<BR>
+<A href="../index.html" class="index" title="Htmlpp Homepage"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Home</FONT></A>&nbsp;<BR>
+<A href="../introduction/index.html" class="index" title="What is Htmlpp and how to start using it"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Introduction</FONT></A>&nbsp;<BR>
+<IMG src="../images/sunken.gif" width=36 height=45 alt="Download" border=0 align=middle>
+&nbsp;<FONT color="#CCFFFF" face="arial"><STRONG>Download</STRONG></FONT>&nbsp;<BR>
+<A href="../docs/index.html" class="index" title="Htmlpp documentation: Reference, FAQ, Known bugs..."><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Docs</FONT></A>&nbsp;<BR>
+<A href="../support/index.html" class="index" title="What to do if you have problems with Htmlpp"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Support</FONT></A>&nbsp;<BR>
+<A href="../examples/index.html" class="index" title="Examples of Htmlpp source code"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Examples</FONT></A>&nbsp;<BR>
+<A href="../addons/index.html" class="index" title="Utilities to improve your productivity with Htmlpp"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Add-ons</FONT></A>&nbsp;<BR>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="index.html">Download</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="white"><FONT face="arial"><STRONG>Unix&nbsp;Install</STRONG></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="msdos_install.html">MSDOS&nbsp;Install</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="win32_install.html">Win32&nbsp;Install</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+</TR><TR>
+<TD valign=top bgcolor="white" colspan=8 >
+<DIV style="padding-left:15pt;padding-right:10pt;padding-top:10pt;padding-bottom:5pt;">
+
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt"><A NAME="TOC11">Installation Under Unix</A></H2></FONT>
+
+<P>Make sure your PERLLIB environmental variable is set, e.g.:
+<PRE>$ echo $PERLLIB
+/usr/lib/perl5
+</PRE>
+
+<P>This is the path where the Perl interpreter can find standard
+Perl libraries.  If you see a blank line after the echo command,
+then your PERLLIB environmental (shell) variable is not set. For
+Perl 5 distributions, the default PERLLIB path is /usr/lib/perl5.
+It is a good idea just to put the assignment of the PERLLIB
+variable into your login command file.  See the appropriate man
+page for your shell for more information.
+
+<P>Then:
+<UL>
+<LI><A href="index.html">Download</A> the <TT>htmlpp.tgz</TT> or the <TT>htmlpp.zip</TT> file.
+<LI>Make a directory for the contents of this distribution:
+<PRE>mkdir /usr/local/htmlpp
+</PRE>
+<LI>Copy the downloaded archive to this directory:
+<PRE>cp htmlpXXX.X /usr/local/htmlpp
+</PRE>
+<LI>cd to this directory and extract the archive file:
+<TABLE border=1><TR><TH>Archive</TH><TH>Extract using</TH></TR>
+<TR><TD><CODE>htmlpXXX.tgz</CODE></TD>
+<TD><CODE>tar zxvf htmlpXXX.tgz</CODE></TD></TR>
+<TR><TD><CODE>htmlpXXX.zip</CODE></TD>
+<TD><CODE>unzip -a htmlpXXX.zip</CODE></TD></TR>
+</TABLE>
+<LI>Copy the <TT>htmlpp</TT> file to a common directory, such as
+<TT>/usr/local/bin</TT>.
+Make sure the <TT>htmlpp</TT> file has execute permission.
+<LI>Copy all the <TT>.pl</TT> file and the <TT>htmlpp.d</TT> file from htmlpp
+directory to the PERLLIB directory (Usually, <TT>/usr/lib/perl5</TT>).
+<PRE>cp /usr/local/htmlpp/*.pl $PERLLIB/
+</PRE>
+<LI>Run the htmlpp command with no arguments and you will see the
+following ouput:
+<PRE>Htmlpp - a HTML pre-processor V4.2a
+This is free software and may be freely modified and distributed.
+Copyright (c) 1996-99 iMatix Corporation - http://www.imatix.com/
+
+syntax: htmlpp [-debug] [-guru] [-env] [-nofunc] [-page list]
+               [-set name=value] [-charset value] &lt;filename&gt;...
+
+ -debug    Leave work files: useful for debugging macros and loops
+ -guru     Work in Guru Mode
+ -env      Load all environment variables into document symbol table
+ -nofunc   Ignore unknown intrinsic functions (&xxx)
+ -page     Produce only specified pages; list can take any of these
+           forms: 'nn', 'nn-nn', 'nn,nn,nn'.  E.g. -page 1 -page 3,7
+           You can also refer to output filenames: -page index3.htm
+ -set      Set symbol value. This override any default settings or
+           settings made from within the htmlpp input.
+ -charset  Define the character set for the source input.
+           Valid values are 'iso-8859-1' and 'ms-dos'.
+</PRE>
+<P>If you see an error message such as the following:
+<PRE>Can't locate sflcvdp.pl in @INC
+(@INC contains: /usr/lib/perl5/i586-linux/5.00404
+/usr/lib/perl5 /usr/lib/perl5/site_perl/i586-linux
+/usr/lib/perl5/site_perl .)
+at /usr/local/bin/htmlpp line 26.
+</PRE>
+<P>This means that the Perl interpreter cannot find a file
+specified by the 'require' command in the @INC path.  Make
+sure you have copied all the *.pl files from the htmlpp directory
+into $PERLLIB and that the PERLLIB shell variable is set to
+this path.</P>
+
+<P>If you see a message like:
+<PRE># htmlpp
+bash: /usr/bin/htmlpp: No such file or directory</PRE>
+
+<P>You might have to edit the 'shebang' on the first line of the file htmlpp.
+The problem is that the shebang is pointing to the wrong location for perl.
+On some systems, 'which perl' will give you the correct path to place in the shebang.
+On many systems you can use '#! /usr/bin/perl'.</P>
+</UL>
+</DIV>
+</TD></TR>
+<TR><TD align="center" valign="bottom">
+<A href="http://www.imatix.com/"><IMG src="../images/im0096c.gif" width=96 height=36 alt="iMatix"  border=0>
+</A>
+</TD><TD colspan=8>
+<TABLE width="100%" border=0><TR><TD align="left">&nbsp;<BR>
+<FONT size=-1 color="#FFFF99">Copyright &copy; 1996-99
+iMatix Corporation.<BR> Hosted by <A href="http://www.openavenue.com/" class="footer">OpenAvenue.com</A>.
+Made with Htmlpp. Powered by <A href="http://www.xitami.com/" class="footer">Xitami</A>.</FONT></TD>
+<TD valign="top" align="right">&nbsp;<BR>
+<FONT size=-1 color="#FFFF99">Updated: October 20, 1999<BR>
+<A href="mailto:ebb@imatix.com?subject=Feedback on Htmlpp.org site" class="footer">Feedback</A></FONT>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</BODY></HTML>

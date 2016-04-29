@@ -1,0 +1,320 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML lang=en><HEAD>
+<!--Revised: 16 Dec, 1999 By: Enrique Bengoechea-->
+<META http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<META name=author content="Enrique Bengoechea">
+<TITLE>htmlpp: Htmlpp Documentation</TITLE>
+<STYLE type="text/css">
+<!--
+BODY {margin: 0em}
+A.footer {color: #CCFFFF}
+A.index {text-decoration: none}
+-->
+</STYLE>
+</HEAD>
+<BODY onLoad="focus()" bgcolor="#000080" marginwidth=0 marginheight=0
+margintop=0 marginbottom=0 marginleft=0 marginright=0>
+
+<CENTER>
+<TABLE width="100%" border=0 cellspacing=0 celpadding=5 bgcolor="#000080"><TR>
+<TD align="left" valign="top">
+<A href="../index.html"><IMG src="../images/htmlpp1.gif" width=100 height=75 alt="Htmlpp" border=0>
+</A></TD>
+<TD align="center" valign="center" colspan=10>
+<FONT color="#FFFF99" face="arial"><H1>Htmlpp Documentation</H1></FONT>
+</TR><TR>
+<TD valign=TOP nowrap rowspan=2>
+&nbsp;<BR>
+<A href="../index.html" class="index" title="Htmlpp Homepage"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Home</FONT></A>&nbsp;<BR>
+<A href="../introduction/index.html" class="index" title="What is Htmlpp and how to start using it"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Introduction</FONT></A>&nbsp;<BR>
+<A href="../download/index.html" class="index" title="How to get Htmlpp and how to install it"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Download</FONT></A>&nbsp;<BR>
+<A href="index.html" class="index" title="Htmlpp documentation: Reference, FAQ, Known bugs..."><IMG src="../images/sunken.gif" width=36 height=45 alt="" border=0 align=middle>
+&nbsp;<FONT color="#CCFFFF" face="arial"><STRONG>Docs</STRONG></FONT></A>&nbsp;<BR>
+<A href="../support/index.html" class="index" title="What to do if you have problems with Htmlpp"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Support</FONT></A>&nbsp;<BR>
+<A href="../examples/index.html" class="index" title="Examples of Htmlpp source code"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Examples</FONT></A>&nbsp;<BR>
+<A href="../addons/index.html" class="index" title="Utilities to improve your productivity with Htmlpp"><IMG src="../images/click.gif" width=36 height=36 alt="" border=0 align=middle>
+&nbsp;<FONT COLOR="#FFFF99" face="arial">Add-ons</FONT></A>&nbsp;<BR>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="stable.html">v.4.2a Ref</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="develop.html">v.4.2c Ref</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="FAQ.html">FAQ</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="#87CEFA"><FONT face="arial">
+<A href="bugs.html">Known Bugs</A></FONT></TD>
+<TD bgcolor="#000080"></TD>
+<TD align=center bgcolor="white"><FONT face="arial"><STRONG>History</STRONG></FONT></TD>
+<TD bgcolor="#000080"></TD>
+</TR><TR>
+<TD valign=top bgcolor="white" colspan=10 >
+<DIV style="padding-left:15pt;padding-right:10pt;padding-top:10pt;padding-bottom:5pt;">
+<FONT color="#000080" face="arial"><H2 style="margin-left:-13pt">Product History</H2></FONT>
+
+<P><STRONG>Version 4.2c published 6 september 1999 (development release)</STRONG>
+<UL>
+<LI>added .perl/.endperl command.
+<LI>added .endmacro command, activated by $(END_MACRO) standard symbol.
+<LI>added $(ESC_HYPHEN) standard symbol to allow escaping trailing hyphens.
+<LI>added -ifexist option to the .include command.
+<LI>added -ifdef option to the .build command.
+<LI>8-bit characters are now translated in final pass.
+<LI>corrected bug that caused commands in TOC blocks not to be executed.
+<LI>corrected bug that sometimes caused duplicated TOC entries.
+<LI>corrected bug that caused redefinition of user blocks to be appended
+instead of redefined.
+<LI>corrected bug in .build dir command when directories contain periods.
+<LI>corrected bug: Standard blocks were not reset if more than one source
+document was processed.
+<LI>the correct language code for Danish is 'DA', not 'DK' as used before.
+<LI>$(DIR) variable can be undefined now (thanks to Oscar Figuereido)
+</UL>
+
+<P><STRONG>Version 4.2b published 20 November 1998 (development release)</STRONG>
+<UL>
+<LI>now the &date() function formats dates using the language in $(LANG)
+by default.
+<LI>corrected a fault we added to the &relpath() function.
+<LI>&relpath() function now uses current output page as 'from' if only
+one argument is supplied.
+<LI>corrected error in user-defined blocks when several documents were
+processed.
+<LI>symbols in .page commands were not being expanded in the inter and TOC
+passes. Corrected.
+<LI>added database symbols and connections between documents.
+<LI>added for_open and for_close standard blocks.
+<LI>added $(HITS) standard symbol for use in .for loops.
+<LI>added .expires command and -expired command-line option.
+</UL>
+
+<P><STRONG>Version 4.2a published 20 October 1998</STRONG>
+<BR>Thanks to Enrique Bengoechea &lt;ebb@eco.uc3m.es&gt; for
+the many improvements to htmlpp.
+<UL>
+<LI>default input file extension changed from .txt to .htp.
+<LI>added French support in date formatting routines.
+<LI>completed the character entity references for accented characters.
+<LI>added -charset command-line option.
+<LI>corrected a fault we added to the &relpath() function.
+<LI>added support for attributes in links.
+<LI>added support for relative references.
+<LI>added support for multilanguage symbols, e.g. $(home.es) and
+$(home.en).
+<LI>added .for loop that queries flat-text databases.
+</UL>
+
+<P><STRONG>Version 4.1a published 5 August 1998</STRONG>
+<UL>
+<LI>table of contents is now built at very end, before final pass.
+<LI>added &pageref() intrinsic function (thanks to Alan Silver).
+<LI>command-line options can be supplied in shorted form (e.g. -d
+      for -debug).
+<LI>added $(DIR) symbol for specifying the target directory.
+<LI>added &relpath() function (thanks to Enrique Bengoechea).
+</UL>
+
+<P><STRONG>Version 4.0g published 24 July 1998</STRONG>
+<UL>
+<LI>added -noquote option for the .macro command.
+<LI>corrected htmlpp to allow nested intrinsic functions.
+<LI>corrected bug in &file_time() function.
+</UL>
+
+<P><STRONG>Version 4.0f published 4th June 1998</STRONG>
+<UL>
+<LI>added DIR_HREFL field for .build dir
+<LI>corrected error in &date function (thanks to Enrique Bengoechea).
+<LI>added support for multilanguage &date function (also thanks to EB).
+<LI>added the .pipe command and PIPE_HEADER, PIPE_FOOTER blocks.
+<LI>added -nofunc option (thanks to Alister Bulman).
+<LI>added -nosplit option for the .macro command.
+</UL>
+
+<P><STRONG>Version 4.0e published 31 May 1998</STRONG>
+<UL>
+<LI>added a number of date-handling intrinsic functions.
+<LI>.for loops generate a .define command for their loop variable (thanks
+      to Bernard de Rubinat).
+<LI>corrected an error in the -page option.
+<LI>default value for an anchor is now the anchor title.
+</UL>
+
+<P><STRONG>Version 4.0d published 9 May 1998</STRONG>
+<UL>
+<LI>$(*name) was failing for simple anchors.
+<LI>.define commands are kept through passes, which makes loops
+      work much better (thanks to Bernard de Rubinat).
+<LI>added &system() intrinsic function (thanks to Keith Dart).
+<LI>no longer does case-conversion in .build dir blocks.
+<LI>removed warning on long filenames.
+<LI>added -page switch for selective page generation.
+</UL>
+
+<P><STRONG>Version 4.0c published 18 April 1998</STRONG>
+<UL>
+<LI>Added DIR_SIZEK and DIR_SIZEM directory block variables
+<LI>Finally, you can escape variables in macro text so that
+      they are only expanded in the next pass.
+<LI>LINEMAX now defaults to 0 (no warnings).
+<LI>Worked-around bug in Perl which caused htmlpp to block when
+      macro arguments contained single quote '.
+<LI>&(expr) was not working - fixed by James Thieler.
+<LI>Symbols that refer to anchors now produce anchor title if possible,
+      thanks to Craig Smith.
+</UL>
+
+<P><STRONG>Version 4.0b published 24 February 1998</STRONG>
+<UL>
+<LI>Correctly handles comments in macro definitions
+<LI>Allows .page commands to be built by .for loops
+<LI>Underlines in macro arguments are no longer replaced by spaces.
+<LI>Lines ending in '\' are output without trailing newlines
+</UL>
+
+<P><STRONG>Version 4.0a published 07 February 1998</STRONG>
+<UL>
+<LI>Searches LIBPATH, then PATH for document files.
+<LI>Macros can now contain { escape sequences (e.g. for JavaScript
+      subroutines)
+<LI>Multiline .echo commands now work.
+<LI>Added various new intrinsic functions.
+<LI>Intrinsic &time() did not work - fixed.
+<LI>Symbol expansion code rewritten to allow any level of embedding.
+</UL>
+
+<P><STRONG>Version 3.0 published 16 June 1997.</STRONG>
+<UL>
+<LI>V3.9e - .for command changed to handle variable expansion in a
+smarter manner: for loop variables are expanded, but others are copied
+through to next pass.
+<LI>V3.9d - .block commands are no longer interpreted in the first
+pass; this lets you change headers and footers within a document.
+$(*symbol) was wrongly translated sometimes.
+<LI>V3.9c - added &image_width() and &image_height() intrinsic
+functions; added $(TOC_LEVEL) variable.
+<LI>V3.9b - reversed changes of version 3.8; macros expand variables
+immediately.  This was needed to correctly generate tables of contents.
+Also changed %(VAR) behaviour to match documentation - if variable is
+not defined, no error message is issued.
+<LI>V3.9a - added anchor titles, $0, and $#.
+<LI>V3.9 - added header level numbering and $+ symbol; added -env
+option.
+<LI>V3.8 - variables in macro text are translated in following pass.
+<LI>V3.7 - correctly uses html variable for output files.
+<LI>V3.6 - added guru_opt.fmt file for finer GuruMode control.
+<LI>V3.5 - improved GuruMode, again again.
+<LI>V3.4 - improved GuruMode, again.
+<LI>V3.3 - added $(DOCBASE) variable; improved multiline macros,
+improved GuruMode.
+<LI>V3.2 - no longer complains on forward anchors references.
+Removed .guru command and reworked GuruMode.
+<LI>V3.1 - updated some functions and improved the doc.
+<LI>V3.00 - Added macro capabilities; added GuruMode; fixed some
+incompatibilities with Perl 4; added .for autosplit feature; \.
+replaced by . in whole line, not just at start; added support for
+accented characters.
+</UL>
+
+<P><STRONG>Version 2.2 published 25 May 1997.</STRONG>
+<UL>
+<LI>V2.21 - added intrinsic function syntax, and &date().
+<LI>V2.20 - &("...") permits Perl text including '(' and ')';
+Delays translation of symbols in .for loops until loop is
+output.
+</UL>
+
+<P><STRONG>Version 2.1 published 8 Mar 1997.</STRONG>
+<UL>
+<LI>V2.18 - .include also allows file with path name.
+<LI>V2.17 - cosmetic changes.
+<LI>V2.16 - search PATH path for .include'd files.
+<LI>V2.15 - cosmetic changes.
+<LI>V2.14 - ".define xx = expr" now expands variables first.
+<LI>V2.13 - .build dir always lists filenames in lowercase.
+<LI>V2.11 - variable expansion improved a little.
+<LI>V2.12 - cosmetic changes.
+<LI>V2.10 - .define command is resolved as late as possible,
+instead of immediately.  .For loops may be indented; $for_list
+is accessible locally inside each level.  Minor documentation
+cleanups.  Fixed error in .if block parsing.  Lots of cosmetic
+changes to eliminate warnings when 'perl -w' used.  Corrected
+misnumbering of HTML headers.
+</UL>
+
+<P><STRONG>Version 2.0 published 17 Feb 1997.</STRONG>
+<UL>
+<LI>V2.07 - minor code cleanups;
+<LI>V2.06 - correction in .page parsing code for $(TITLE);
+added %(...) for environment variables.
+<LI>V2.05 - correction in symbol replacement code.
+<LI>V2.04 - more corrections for Perl 5.
+<LI>V2.03 - minor corrections for Perl 5.
+<LI>V2.02 - added notion of local blocks, -debug switch.
+<LI>V2.01 - added &(...) symbol; added .include `command`;
+blocks can now contain action lines; added index_open,
+index_close, and index_entry blocks; rewrote dialog to do
+multipass processing.  Whew.  Oh yeah: added .for/.endfor as
+asked for by Dave Rockwell (rockwell@wwwcis4.shr.dec.com).
+</UL>
+
+<P><STRONG>Version 1.6 published 14 Jan 1997.</STRONG>
+<UL>
+<LI>V1.62 - added .include `command` function.
+</UL>
+
+<P><STRONG>Version 1.5 published 4 Nov 1996.</STRONG>
+<UL>
+<LI>V1.61 - error in code that added '.txt' extension.
+<LI>V1.60 - added autoincrement/decrement symbols, permitted
+multiple filenames on command line.
+<LI>V1.55 - '.ignore page' ignores next .page in index table.
+</UL>
+
+<P><STRONG>Version 1.4 published 9 Jun 1996.</STRONG>
+<UL>
+<LI>V1.54 - .endblock preferred to .end.
+<LI>V1.53 - commands can continue over several lines, spaces
+allowed after ".".
+<LI>V1.52 - added $(symbol?value) and improved doc.
+<LI>V1.51 - modified for Perl 5, thanks to Ewen McNeill.
+<LI>V1.50 - supports user-defined blocks.
+<LI>V1.41 - log errors in separate listing file.
+</UL>
+
+<P><STRONG>Version 1.3 published 13 May 1996.</STRONG>
+<UL>
+<LI>V1.31 - improved documentation and packaging.
+</UL>
+
+<P><STRONG>Version 1.2 escaped around 13 April 1996.</STRONG>
+<UL>
+<LI>V1.22 - headers anchors changed to include whole line.
+<LI>V1.21 - sorted '.build dir' entries by name.
+</UL>
+
+<P><STRONG>Version Version 1.1 released 6 April 1996.</STRONG>
+<P><STRONG>Version 1.0 written 27 November 1995.</STRONG>
+</DIV>
+</TD></TR>
+<TR><TD align="center" valign="bottom">
+<A href="http://www.imatix.com/"><IMG src="../images/im0096c.gif" width=96 height=36 alt="iMatix"  border=0>
+</A>
+</TD><TD colspan=10>
+<TABLE width="100%" border=0><TR><TD align="left">&nbsp;<BR>
+<FONT size=-1 color="#FFFF99">Copyright &copy; 1996-99
+iMatix Corporation.<BR> Hosted by <A href="http://www.openavenue.com/" class="footer">OpenAvenue.com</A>.
+Made with Htmlpp. Powered by <A href="http://www.xitami.com/" class="footer">Xitami</A>.</FONT></TD>
+<TD valign="top" align="right">&nbsp;<BR>
+<FONT size=-1 color="#FFFF99">Updated: October 20, 1999<BR>
+<A href="mailto:ebb@imatix.com?subject=Feedback on Htmlpp.org site" class="footer">Feedback</A></FONT>
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+</BODY></HTML>
+
